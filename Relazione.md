@@ -118,20 +118,20 @@ Abbiamo considerato diverse misure di centralità:
 P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
 Invece per quanto riguarda PageRank, Eigenvetor Centrality e HITS, essendo per natura degli algoritmi che effettuano delle approssimazioni successive, è stato settato un limite di 1000 iterazioni massime.
 
-Transitività (coefficiente di clustering globale, percentuale di triangoli): 0.14
+Considerazioni:
+I grafici mostrano lo score dei primi 50 vertici del grafo in ordine dcrescente di score.
+Come è possibile osservare, vi sono sempre i nodi 1773 e 4949 in testa ad ogni grafico, il che porta a pensare che essi rappresentino i nodi maggiormente "influenti" della rete.
+In tutti i grafi (ad eccezione dei due tipi di closeness centrality), si può notare un andamento esponenziale (tipico delle reti libere da scala, come già accennato prima).
+Nei due grafici rimanenti invece, questo comportamento "esponenziale" non è così evidente come nei casi precedenti a causa della conformazione del grafo; in altre parole, essendo la distanza media molto bassa, i vertici del grafo tendono ad essere molto vicini l'uno dall'altro e quindi gli scores di queste centrality (dei primi 50 nodi della rete) risultano essere molto simili.
+
+Clustering Coefficient
+
+Global Transitivity: 0.042
+Local Transitivity: 0.130
 
 Considerazioni:
-La correlazione tra In Degree e PageRank è forte, 0.84, questo ci indica che se un nodo
-ha un grado in ingresso elevato, è molto probabile conoscerlo tramite amici di amici.
-La correlazione tra Hubs e Authority è forte, 0.76, questo ci indica che più amici ha un
-nodo più è amico di altri, quindi più vota più viene votato.
-La correlazione tra In Degree e Harmonic Closeness è moderata, 0.65, quindi un nodo
-con grado in ingresso elevato probabilmente si trova vicino al resto della rete (quindi sta
-al centro).
-La correlazione tra Page Rank e Harmonic Closeness è moderata, 0.58, quindi i nodi al
-centro della rete probabilmente sono tra i più famosi della scuola.
-La transitività bassa fa pensare che due persone con un migliore amico in comune non
-si considerino migliori amiche, dato che ci sono pochi triangoli.
+Anche se basso il coefficient di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
+Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coeeficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
 
 ## AUTORE
 
