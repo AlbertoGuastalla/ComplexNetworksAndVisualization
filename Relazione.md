@@ -4,7 +4,7 @@ Introduzione
 
 In questa relazione interpreto i risultati ottenuti con due librerie di Java (JGraphT e Jung) e Gephi riguardanti l’analisi della rete
 Twitch Social Network (EN).
-La rete presa in esame è un grafo non diretto che è stato creato in seguito all'analisi delle amicizie fra gli streamers inglesi della piattaforma Twitch.
+La rete presa in esame è un grafo non orientato che è stato creato in seguito all'analisi delle amicizie fra gli streamers inglesi della piattaforma Twitch.
 Ogni nodo rappresenta uno streamer e ogni arco, l'amicizia fra due streamers.
 La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 
@@ -23,7 +23,7 @@ La rete così visualizzata sembra avere gruppo di streamers con tanti outlier po
 Misure
 
 1. Generiche
-è un grafo non diretto
+è un grafo non orientato
 NON è un multigrafo
 NON sono presenti selfloops
 NON sono presenti nodi isolati
@@ -158,6 +158,13 @@ Considerazioni
 Il grafico mostra una marcata pendenza, quindi significa che l’assortatività della rete è
 negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
+
+Struttura
+
+1. Componenti
+Essendo un grafo non orientato, esso è fortemente connesso.
+
+
 
 ## AUTORE
 
