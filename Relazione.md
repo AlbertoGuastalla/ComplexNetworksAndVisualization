@@ -133,6 +133,32 @@ Considerazioni:
 Anche se basso il coefficient di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
 Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coeeficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
 
+Assortatività (omofilia)
+Permette di misurare il grado di correlazione tra i valori degli attributi dei nodi.
+Una rete è assortativa se i nodi tendono a connettersi a nodi con valori simili (rispetto a un attributo).
+In pratica permette di analizzare l'omofilia (se è assortativo rispetto a un valore c'è omofilia).
+Correlazione tra il grado di un nodo e il grado medio dei suoi vicini
+Non avendo attributi sui nodi, è stato usato il grado: verifichiamo se i nodi con tanti archi
+tendono a collegarsi ad altri nodi con tanti archi.
+La pendenza della retta indica se c’è assortatività o meno:
+- positiva: assortativo
+- negativa: disassortativo
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_correlation.png"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/omophily.png"/>
+</p>
+
+Coefficiente di assortatività del grado: -0.336005892
+Considerazioni
+
+Il grafico mostra una marcata pendenza, quindi significa che l’assortatività della rete è
+negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
+Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
+
 ## AUTORE
 
 * **Alberto Guastalla** - [AlbertoGuastalla](https://github.com/AlbertoGuastalla)
