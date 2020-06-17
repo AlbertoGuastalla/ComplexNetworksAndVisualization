@@ -12,7 +12,9 @@ Visualizzazione
 
 La rete è stata rappresentata con il tool Gephi usando il layout ForceAtlas 2.
 
-IMMAGINE
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/network.png"/>
+</p>
 
 Considerazioni
 
@@ -41,7 +43,9 @@ Varianza: 0.735
 Diametro: 10
 Distribuzione:
 
-IMMAGINE
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/distance_distribution.png"/>
+</p>
 
 Considerazioni:
 Si nota subito la presenza del fenomeno del mondo piccolo dato che la media delle distanze è molto bassa.
@@ -50,7 +54,9 @@ Si nota subito la presenza del fenomeno del mondo piccolo dato che la media dell
 Grado medio: 9.914
 Varianza: 492.40
 
-IMMAGINE
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/degree_distribution.png"/>
+</p>
 
 Considerazioni
 Come sovracitato, il grafo segue una legge di potenza (almeno asintoticamente) e come si puo’ vedere nella
@@ -64,12 +70,68 @@ Le misure di centralità permettono di identificare i nodi più importanti all�
 Abbiamo considerato diverse misure di centralità:
 
 ● Degree Centrality:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/degree_centrality.png"/>
+</p>
+
 ● Closeness Centrality:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/closeness_centrality.png"/>
+</p>
+
 ● Harmonic Closeness Centrality:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
+</p>
+
 ● Eigenvector Centrality:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/eigenvector_centrality.png"/>
+</p>
+
 ● Betweenness Centrality:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/betweeness_centrality.png"/>
+</p>
+
 ● PageRank:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/page_rank_centrality.png"/>
+</p>
+
 ● HITS Score:
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/hits_authorities_centrality.png"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/hits_hubs_centrality.png"/>
+</p>
+
+P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
+Invece per quanto riguarda PageRank, Eigenvetor Centrality e HITS, essendo per natura degli algoritmi che effettuano delle approssimazioni successive, è stato settato un limite di 1000 iterazioni massime.
+
+Transitività (coefficiente di clustering globale, percentuale di triangoli): 0.14
+
+Considerazioni:
+La correlazione tra In Degree e PageRank è forte, 0.84, questo ci indica che se un nodo
+ha un grado in ingresso elevato, è molto probabile conoscerlo tramite amici di amici.
+La correlazione tra Hubs e Authority è forte, 0.76, questo ci indica che più amici ha un
+nodo più è amico di altri, quindi più vota più viene votato.
+La correlazione tra In Degree e Harmonic Closeness è moderata, 0.65, quindi un nodo
+con grado in ingresso elevato probabilmente si trova vicino al resto della rete (quindi sta
+al centro).
+La correlazione tra Page Rank e Harmonic Closeness è moderata, 0.58, quindi i nodi al
+centro della rete probabilmente sono tra i più famosi della scuola.
+La transitività bassa fa pensare che due persone con un migliore amico in comune non
+si considerino migliori amiche, dato che ci sono pochi triangoli.
 
 ## AUTORE
 
