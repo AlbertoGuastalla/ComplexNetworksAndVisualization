@@ -188,7 +188,7 @@ Archi del core: 12782
 Nodi della periferia: 5973
 
 Considerazioni:
-Il core è esattamente localizzato nel cuore della rete (come ci si aspettava), mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
+Il core è localizzato nel cuore della rete, mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
 
 ## AUTORE
 
