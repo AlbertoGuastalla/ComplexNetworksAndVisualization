@@ -13,7 +13,7 @@ Visualizzazione
 La rete è stata rappresentata con il tool Gephi usando il layout ForceAtlas 2.
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/network.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
 </p>
 
 Considerazioni
@@ -44,7 +44,7 @@ Diametro: 10
 Distribuzione:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/distance_distribution.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
 
 Considerazioni:
@@ -55,7 +55,7 @@ Grado medio: 9.914
 Varianza: 492.40
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/degree_distribution.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
 </p>
 
 Considerazioni
@@ -72,47 +72,47 @@ Abbiamo considerato diverse misure di centralità:
 ● Degree Centrality:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/degree_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
 </p>
 
 ● Closeness Centrality:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/closeness_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
 </p>
 
 ● Harmonic Closeness Centrality:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
 </p>
 
 ● Eigenvector Centrality:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/eigenvector_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
 </p>
 
 ● Betweenness Centrality:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/betweeness_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
 </p>
 
 ● PageRank:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/page_rank_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
 </p>
 
 ● HITS Score:
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/hits_authorities_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_authorities_centrality.png"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/AlebertoGuastalla/ComplexNetworkAndVisualization/blob/master/hits_hubs_centrality.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_hubs_centrality.png"/>
 </p>
 
 P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
