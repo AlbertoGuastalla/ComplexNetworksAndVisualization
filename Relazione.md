@@ -178,6 +178,18 @@ Dato il grafo non è orientato, è stato possibile calcolare l’eccentricità d
 suoi nodi.
 Il numero di nodi che possiedono il valore di eccentricità pari al raggio del grafo sono molti; questo è una conferma sul fatto che gran parte dei nodi del grafo siano posizionati al centro del grafo stesso.
 
+3. Core e periferia
+Una rete sociale è formata da 2 tipi di nodi:
+● core (i nodi che sono più o meno strettamente interconnessi)
+● periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)
+
+Nodi del core: 805 (k-core con k=20)
+Archi del core: 66
+Nodi della periferia: 6321
+
+Considerazioni:
+Il core è esattamente localizzato nel cuore della rete (come ci si aspettava), mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
+
 ## AUTORE
 
 * **Alberto Guastalla** - [AlbertoGuastalla](https://github.com/AlbertoGuastalla)
