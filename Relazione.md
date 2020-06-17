@@ -183,9 +183,9 @@ Una rete sociale è formata da 2 tipi di nodi:
 ● core (i nodi che sono più o meno strettamente interconnessi)
 ● periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)
 
-Nodi del core: 805 (k-core con k=20)
-Archi del core: 66
-Nodi della periferia: 6321
+Nodi del core: 1153 (k-core con k=10)
+Archi del core: 12782
+Nodi della periferia: 5973
 
 Considerazioni:
 Il core è esattamente localizzato nel cuore della rete (come ci si aspettava), mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
