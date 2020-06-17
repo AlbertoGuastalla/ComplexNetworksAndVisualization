@@ -164,7 +164,19 @@ Struttura
 1. Componenti
 Essendo un grafo non orientato, esso è fortemente connesso.
 
+2. Eccentricità
+È la massima distanza tra un nodo e tutti gli altri nodi della rete.
+Permette di misurare quanto ogni nodo si trova lontano dal centro della rete.
+La distanza tra due nodi è la lunghezza del cammino più breve che li collega.
+Diametro della rete: 10 (eccentricità più grande)
+Raggio della rete: 6 (eccentricità più piccola)
+Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è massima: 5
+Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è minima: 1115
 
+Considerazioni:
+Dato il grafo non è orientato, è stato possibile calcolare l’eccentricità dei
+suoi nodi.
+Il numero di nodi che possiedono il valore di eccentricità pari al raggio del grafo sono molti; questo è una conferma sul fatto che gran parte dei nodi del grafo siano posizionati al centro del grafo stesso.
 
 ## AUTORE
 
