@@ -59,9 +59,7 @@ Si nota subito la presenza del fenomeno del mondo piccolo dato che la media dell
 <h4>Considerazioni</h4>
 Come sovracitato, il grafo segue una legge di potenza (almeno asintoticamente).
 Cio’ vuol dire che la rete e’ nel regime libero da scala ed e’ presente il fenomeno rich get richer.
-Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers piu’ popolari della piattaforma Twitch.<br><br>
-
-Per il calcolo dei due momenti, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
+Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers piu’ popolari della piattaforma Twitch.<br>
 
 <h3><li>Centralità</li></h3>
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.
@@ -345,7 +343,9 @@ E' presente il fenomeno del mondo piccolo dato che la distanza media è 3.888, e
 La distribuzione del grado segue una power law, quindi assumiamo che sia
 presente il fenomeno rich get richer, questo inoltre è confermato dalla grande variabilità del grado dei nodi (proprio come nel grafo d'esame).
 Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
-negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
+negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.<br><br>
+
+Per il calcolo dei due momenti, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
 
 ## AUTORE
 
