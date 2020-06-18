@@ -10,14 +10,13 @@ La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 
 <h3>Visualizzazione</h3>
 
-La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
-
 <p align="center">
   <img width="500px" height="500px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
 </p>
 
 <h3>Considerazioni</h3>
 
+La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
 La rete così visualizzata sembra avere gruppo compatto di streamers al centro con tanti outlier posizionati sulla "cresta" del grafo.
 
 <h2>Misure</h2>
@@ -39,13 +38,12 @@ Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un 
 Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
 
 <h3><li>Distanza</li></h3>
-Distanza media: 3.677
-Varianza: 0.735
-Diametro: 10
-Distribuzione:
+- Media Distanza: 3.677
+- Varianza Distanza: 0.735
+- Distribuzione:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
+<p align="left">
+  <img width="400px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
 
 Considerazioni:
