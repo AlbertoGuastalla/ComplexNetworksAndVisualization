@@ -67,102 +67,104 @@ Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers 
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.<br>
 Ho considerato diverse misure di centralità:<br><br>
 
-● Degree Centrality:<br>
+<h4>Degree Centrality:</h4><br>
 Numero di archi incidenti su un nodo.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
 </p>
 
-● Closeness Centrality:<br>
+<h4>Closeness Centrality:</h4><br>
 Reciproco della somma della lunghezza dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
 </p>
 
-● Harmonic Closeness Centrality:<br>
+<h4>Harmonic Closeness Centrality:</h4><br>
 Somma dei reciproci delle lunghezze dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
 </p>
 
-● Eigenvector Centrality:<br>
+<h4>Eigenvector Centrality:</h4><br>
 Misura di centralità che si basa sulla centralità dei nodi vicini. Un vertice possiede uno score tanto alto quanto è alto lo score dei suoi vicini.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
 </p>
 
-● Betweenness Centrality:<br>
+<h4>Betweenness Centrality:</h4><br>
 Misura di centralità che si basa sui cammini minimi attraversanti un determinato vertice. Più cammini minimi attaversano un vertice del grafo, più è alto lo score di tale vertice.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
 </p>
 
-● PageRank:<br>
+<h4>PageRank:</h4><br>
 Misura di centralità che si basa sulla probabilità stazionaria di essere in un determinato vertice del grafo effettuando una camminata randomica sull'ultimo. (Coincide con l'eigenvector centrality qualora il parametro "dumping-factor" venisse settato a 0.0).
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
 </p>
 
-● HITS Score:<br>
+<h4>HITS Score:</h4><br>
 Misura di centralità che si basa su due punteggi. Un punteggio di hub che misura quanti collegamenti possiede un vertice verso altri vertici chiamati authorities e un punteggio di authority che misura da quanti archi è raggiunto tale nodo dai nodi hubs.
-(Se non specificato diversamente, ogni nodo è sia hub che authority, inoltre in un grafo non orientato il numero di archi entranti è uguale al numero di archi uscneti, quindi i due valori coincidono).
+(Se non specificato diversamente, ogni nodo è sia hub che authority, inoltre in un grafo non orientato il numero di archi entranti è uguale al numero di archi uscenti, quindi i due valori coincidono).
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_authorities_centrality.png"/>
 </p>
 
-P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
+Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
 Invece per quanto riguarda PageRank, Eigenvetor Centrality e HITS, essendo per natura degli algoritmi che effettuano delle approssimazioni successive, è stato settato un limite di 1000 iterazioni massime.
 
-Considerazioni:
+<h4>Considerazioni:</h4>
 I grafici mostrano lo score dei primi 50 vertici del grafo in ordine dcrescente di score.
 Come è possibile osservare, vi sono sempre i nodi 1773 e 4949 in testa ad ogni grafico, il che porta a pensare che essi rappresentino i nodi maggiormente "influenti" della rete.
 In tutti i grafi (ad eccezione dei due tipi di closeness centrality), si può notare un andamento esponenziale (tipico delle reti libere da scala, come già accennato prima).
-Nei due grafici rimanenti invece, questo comportamento "esponenziale" non è così evidente come nei casi precedenti a causa della conformazione del grafo; in altre parole, essendo la distanza media molto bassa, i vertici del grafo tendono ad essere molto vicini l'uno dall'altro e quindi gli scores di queste centrality (dei primi 50 nodi della rete) risultano essere molto simili.
+Nei due grafici rimanenti invece, questo comportamento "esponenziale" non è così evidente come nei casi precedenti a causa della conformazione del grafo; in altre parole, essendo la distanza media molto bassa, i vertici del grafo tendono ad essere molto vicini l'uno dall'altro e quindi gli scores di queste centrality (in particolare dei primi 50 nodi della rete) risultano essere molto simili.
 
-Clustering Coefficient
+<h3>Clustering Coefficient</h3>
+Misura del grado in cui i nodi in un grafico tendono a raggrupparsi insieme.<br>
 
 Global Transitivity: 0.042
 Local Transitivity: 0.130
 
-Considerazioni:
-Anche se basso il coefficient di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
-Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coeeficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
+<h4>Considerazioni:</h4>
+Anche se basso, il coefficiente di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
+Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coefficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
 
-Assortatività (omofilia)
+<h3>Assortatività (omofilia)</h3>
 Permette di misurare il grado di correlazione tra i valori degli attributi dei nodi.
 Una rete è assortativa se i nodi tendono a connettersi a nodi con valori simili (rispetto a un attributo).
 In pratica permette di analizzare l'omofilia (se è assortativo rispetto a un valore c'è omofilia).
 Correlazione tra il grado di un nodo e il grado medio dei suoi vicini
 Non avendo attributi sui nodi, è stato usato il grado: verifichiamo se i nodi con tanti archi
 tendono a collegarsi ad altri nodi con tanti archi.
-La pendenza della retta indica se c’è assortatività o meno:
+La pendenza della retta indica se c’è assortatività o meno:<br>
 - positiva: assortativo
 - negativa: disassortativo
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_correlation.png"/>
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_correlation.png"/>
 </p>
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/omophily.png"/>
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/omophily.png"/>
 </p>
 
 Coefficiente di assortatività del grado: -0.336005892
-Considerazioni
+
+<h4>Considerazioni</h4>
 
 Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
-negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
+negativa. Ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
-Questo risultato è possibile verificarlo, osservando direttamente il grafico in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.
+Questo risultato è possibile verificarlo, osservando direttamente il grafico in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.</ol>
 
-Struttura
+<h2>Struttura</h2>
 
 1. Componenti
 Essendo un grafo non orientato, esso è fortemente connesso.
@@ -228,7 +230,6 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
 </p>
-</ol>
 
 Modelli causali
 
