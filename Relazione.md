@@ -38,13 +38,13 @@ Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un 
 Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
 
 <h3><li>Distanza</li></h3>
-- Media Distanza: 3.677
-- Varianza Distanza: 0.735
-- Distribuzione:
 
 <p align="left">
   <img width="600px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
+
+- Media Distanza: 3.677<br>
+- Varianza Distanza: 0.735<br>
 
 Considerazioni:
 Si nota subito la presenza del fenomeno del mondo piccolo dato che la media delle distanze è molto bassa.
