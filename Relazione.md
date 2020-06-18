@@ -5,10 +5,10 @@
 In questa relazione interpreto i risultati ottenuti con tre librerie di Java (JGraphT, Jung e GraphStream) e Gephi riguardanti l’analisi della rete
 Twitch Social Network (EN).
 La rete presa in esame è un grafo non orientato che è stato creato in seguito all'analisi delle amicizie fra gli streamers inglesi della piattaforma Twitch.
-Ogni nodo rappresenta uno streamer e ogni arco, l'amicizia fra due streamers.
+Ogni nodo rappresenta uno streamer e ogni arco l'amicizia fra due streamers.
 La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 
-Visualizzazione
+<h2>Visualizzazione</h2>
 
 La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
 
