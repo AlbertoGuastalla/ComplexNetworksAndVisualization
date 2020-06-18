@@ -190,6 +190,41 @@ Nodi della periferia: 5973
 Considerazioni:
 Il core è localizzato nel cuore della rete, mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
 
+Community
+La modularità m è la differenza tra:
+- la frazione degli archi che ricadono all'interno delle comunità date e
+- la frazione attesa se gli archi fossero distribuiti in modo casuale
+(conservando i gradi dei nodi)
+Il valore di m è compreso tra -0,5 (incluso) e 1 (escluso):
+- Se la maggior parte degli archi è incidente ai nodi all'interno della stessa comunità, la
+modularità è molto alta, vicina (ma non uguale) a 1 e la partizione proposta descrive una
+struttura della comunità molto buona.
+- La modularità di -0.5 significa che i nodi all'interno della stessa comunità non sono
+affatto adiacenti, la struttura della comunità proposta è peggiore di quella casuale.
+
+Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score)
+Parametri:
+Risoluzione: 1.0
+Randomizzazione: Si
+Risultati:
+Modularità: 0.445
+Numero comunità rilevate: 13
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities.png"/>
+</p>
+
+Risoluzione: 2.0
+Risultati:
+Modularità: 0.37
+Numero comunità rilevate: 3
+Considerazioni:
+Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese (anche se la modularità è leggermente più bassa).
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
+</p>
+
 ## AUTORE
 
 * **Alberto Guastalla** - [AlbertoGuastalla](https://github.com/AlbertoGuastalla)
