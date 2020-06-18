@@ -24,22 +24,22 @@ La rete così visualizzata sembra avere gruppo compatto di streamers al centro c
 
 <ol>
 <h3><li>Generiche</li></h3>
-E' un grafo non orientato
-NON è un multigrafo
-NON sono presenti selfloops
-NON sono presenti nodi isolati
+- E' un grafo non orientato<br>
+- NON è un multigrafo<br>
+- NON sono presenti selfloops<br>
+- NON sono presenti nodi isolati<br>
 
-Numero di Nodi: 7126
-Numero di Archi: 35324
-Numero di archi possibili: 50772750
-Densità: 0.0007 (archi presenti / archi possibili)
+- Numero di Nodi: 7126<br>
+- Numero di Archi: 35324<br>
+- Numero di archi possibili: 50772750<br>
+- Densità: 0.0007 (archi presenti / archi possibili)<br>
 
 <h4>Considerazioni</h4>
 La densità è bassissima.
 Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un grado basso e pochi nodi con un grado alto (hubs).
 Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
 
-2. Distanza
+<h3><li>Distanza</li></h3>
 Distanza media: 3.677
 Varianza: 0.735
 Diametro: 10
