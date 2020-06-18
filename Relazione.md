@@ -8,7 +8,7 @@ La rete presa in esame è un grafo non orientato che è stato creato in seguito 
 Ogni nodo rappresenta uno streamer e ogni arco l'amicizia fra due streamers.
 La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 
-<h2>Visualizzazione</h2>
+<h3>Visualizzazione</h3>
 
 La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
 
@@ -16,14 +16,15 @@ La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
   <img width="500px" height="500px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
 </p>
 
-Considerazioni
+<h3>Considerazioni</h3>
 
 La rete così visualizzata sembra avere gruppo compatto di streamers al centro con tanti outlier posizionati sulla "cresta" del grafo.
 
-Misure
+<h2>Misure</h2>
 
-1. Generiche
-è un grafo non orientato
+<ol>
+<h3><li>Generiche</li></h3>
+E' un grafo non orientato
 NON è un multigrafo
 NON sono presenti selfloops
 NON sono presenti nodi isolati
@@ -31,8 +32,9 @@ NON sono presenti nodi isolati
 Numero di Nodi: 7126
 Numero di Archi: 35324
 Numero di archi possibili: 50772750
-Densità: 0.07% (archi presenti / archi possibili)
-Considerazioni
+Densità: 0.0007 (archi presenti / archi possibili)
+
+<h4>Considerazioni</h4>
 La densità è bassissima.
 Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un grado basso e pochi nodi con un grado alto (hubs).
 Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
@@ -226,6 +228,7 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
 </p>
+</ol>
 
 Modelli causali
 
