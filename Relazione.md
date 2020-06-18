@@ -207,8 +207,8 @@ Parametri:
 Risoluzione: 1.0
 Randomizzazione: Si
 Risultati:
-Modularità: 0.445
-Numero comunità rilevate: 13
+Modularità: 0.451
+Numero comunità rilevate: 16
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities.png"/>
