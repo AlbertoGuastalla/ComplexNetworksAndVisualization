@@ -57,13 +57,13 @@ Si nota subito la presenza del fenomeno del mondo piccolo dato che la media dell
 - Varianza Grado: 492.40<br>
 
 <h4>Considerazioni</h4>
-Come sovracitato, il grafo segue una legge di potenza (almeno asintoticamente) e come si puo’ vedere nella
-versione logaritmica esso segue una retta.
+Come sovracitato, il grafo segue una legge di potenza (almeno asintoticamente).
 Cio’ vuol dire che la rete e’ nel regime libero da scala ed e’ presente il fenomeno rich get richer.
-Cio’ indica la presenza di hub che potrebbero essere formati dagli streamers piu’ popolari della piattaforma Twitch.
+Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers piu’ popolari della piattaforma Twitch.<br>
+
 P.S. Per il calcolo dei due momenti, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
 
-4. Centralità
+<h3><li>Centralità</li></h3>
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.
 Abbiamo considerato diverse misure di centralità:
 
