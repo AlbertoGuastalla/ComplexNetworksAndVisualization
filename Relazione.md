@@ -65,7 +65,7 @@ Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers 
 
 <h3><li>Centralità</li></h3>
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.<br>
-Ho considerato diverse misure di centralità:<br><br>
+Ho considerato diverse misure di centralità:<br>
 
 <h4>Degree Centrality</h4>
 Numero di archi incidenti su un nodo.
