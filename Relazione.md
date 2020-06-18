@@ -40,7 +40,7 @@ Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è 
 <h3><li>Distanza</li></h3>
 
 <p align="left">
-  <img width="600px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
 - Media Distanza: 3.677<br>
 - Varianza Distanza: 0.735<br>
@@ -50,8 +50,8 @@ Si nota subito la presenza del fenomeno del mondo piccolo dato che la media dell
 
 <h3><li>Grado</li></h3>
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
 </p>
 
 - Media Grado: 9.914<br>
