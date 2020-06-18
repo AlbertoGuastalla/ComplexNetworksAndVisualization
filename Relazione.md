@@ -43,7 +43,7 @@ Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è 
 - Distribuzione:
 
 <p align="left">
-  <img width="400px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
+  <img width="600px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
 
 Considerazioni:
