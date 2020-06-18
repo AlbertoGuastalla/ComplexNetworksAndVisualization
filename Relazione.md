@@ -64,53 +64,57 @@ Cio’ vuol dire che la rete e’ nel regime libero da scala ed e’ presente il
 Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers piu’ popolari della piattaforma Twitch.<br>
 
 <h3><li>Centralità</li></h3>
-Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.
-Ho considerato diverse misure di centralità:<br>
+Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.<br>
+Ho considerato diverse misure di centralità:<br><br>
 
 ● Degree Centrality:
+Numero di archi incidenti su un nodo.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
 </p>
 
 ● Closeness Centrality:
+Reciproco della somma della lunghezza dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
 </p>
 
 ● Harmonic Closeness Centrality:
+Somma dei reciproci delle lunghezze dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
 </p>
 
 ● Eigenvector Centrality:
+Misura di centralità che si basa sulla centralità dei nodi vicini. Un vertice possiede uno score tanto alto quanto è alto lo score dei suoi vicini.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
 </p>
 
 ● Betweenness Centrality:
+Misura di centralità che si basa sui cammini minimi attraversanti un determinato vertice. Più cammini minimi attaversano un vertice del grafo, più è alto lo score di tale vertice.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
 </p>
 
 ● PageRank:
+Misura di centralità che si basa sulla probabilità stazionaria di essere in un determinato vertice del grafo effettuando una camminata randomica sull'ultimo. (Coincide con l'eigenvector centrality qualora il parametro "dumping-factor" venisse settato a 0.0).
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
 </p>
 
 ● HITS Score:
+Misura di centralità che si basa su due punteggi. Un punteggio di hub che misura quanti collegamenti possiede un vertice verso altri vertici chiamati authorities e un punteggio di authority che misura da quanti archi è raggiunto tale nodo dai nodi hubs.
+(Se non specificato diversamente, ogni nodo è sia hub che authority, inoltre in un grafo non orientato il numero di archi entranti è uguale al numero di archi uscneti, quindi i due valori coincidono).
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_authorities_centrality.png"/>
-</p>
-
-<p align="left">
-  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_hubs_centrality.png"/>
 </p>
 
 P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
