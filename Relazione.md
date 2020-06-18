@@ -53,7 +53,6 @@ Si nota subito la presenza del fenomeno del mondo piccolo dato che la media dell
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
 </p>
-
 - Media Grado: 9.914<br>
 - Varianza Grado: 492.40<br>
 
