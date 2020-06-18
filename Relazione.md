@@ -10,7 +10,7 @@ La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 
 Visualizzazione
 
-La rete è stata rappresentata con il tool Gephi usando il layout ForceAtlas 2.
+La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
@@ -18,7 +18,7 @@ La rete è stata rappresentata con il tool Gephi usando il layout ForceAtlas 2.
 
 Considerazioni
 
-La rete così visualizzata sembra avere gruppo di streamers con tanti outlier posizionati sulla "cresta" del grafo.
+La rete così visualizzata sembra avere gruppo compatto di streamers al centro con tanti outlier posizionati sulla "cresta" del grafo.
 
 Misure
 
@@ -155,9 +155,10 @@ La pendenza della retta indica se c’è assortatività o meno:
 Coefficiente di assortatività del grado: -0.336005892
 Considerazioni
 
-Il grafico mostra una marcata pendenza, quindi significa che l’assortatività della rete è
+Il grafico mostra una marcata pendenza, in particaolare si capisce subito che l’assortatività della rete è
 negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
+Questo risultato è possibile verificarlo, osservando direttamente il grafico in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.
 
 Struttura
 
@@ -218,12 +219,76 @@ Risoluzione: 2.0
 Risultati:
 Modularità: 0.37
 Numero comunità rilevate: 3
+
 Considerazioni:
 Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese (anche se la modularità è leggermente più bassa).
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
 </p>
+
+Modelli causali
+
+Barabasi-Albert model
+● Parametri:
+- numero nodi: 7126
+- numero di archi: 39675
+
+● Analisi
+○ grafo non orientato
+○ Densità: 0.002
+○ Distanza media: 3.481
+○ Varianza della distanza: 0.447
+○ Grado medio: 11.135
+○ Varianza del grado: 260.08
+○ Clustering Coefficient: 0.014
+○ Assortatività (grado):
+Coefficiente: -0.03646606436
+○ Componenti:
+Il grafo è connesso
+Il numero di componenti connesse è 1
+○ Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):
+Il numero di comunità rilevate è: 20
+● Considerazioni:
+È un po più denso del grafo preso in esame.
+Il grafo è ancora più compatto (in termini di centralità dei nodi) del grafo preso in esame.
+E' parzialmente presente il fenomeno del mondo piccolo dato che la distanza media è 3.481, ma il coefficiente di clustering non è così elevato rapportato alla densità del grafo.
+La distribuzione del grado segue una power law proprio come il grafo analizzato nella prima parte, infatti il grado presenta un'elevata variabilità.
+Il grafo sembra essere neutrale/disassortativo, infatti il suo coefficiente è
+negativo ma è piuttosto vicino a 0.
+Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
+contiene tutti i nodi.
+
+Erdos-Renyi model (gnp model)
+● Parametri
+Numero nodi: 7126
+Numero archi: 35633
+● Analisi
+○ grafo non orientato
+○ Densità: 0.001
+○ Distanza media: 4.107
+○ Varianza della distanza: 0.452
+○ Grado medio: 10.001
+○ Varianza del grado: 9.868
+○ Clustering Coefficient: 0.001
+○ Assortatività (grado):
+Coefficiente: -0.009384953056
+○ Componenti:
+Il grafo NON è connesso
+Il numero di componenti connesse è 8
+La componente connessa gigante ha 493 nodi (ed è una sola)
+○ Comunità (Algoritmo Louvain):
+Il numero di comunità rilevate è: 21
+● Considerazioni:
+È un po più denso del grafo preso in esame.
+Il grafo è ancora più compatto (in termini di centralità dei nodi) di quello generato dal modello di Barabasi-Albert.
+E' parzialmente presente il fenomeno del mondo piccolo dato che la distanza media è 4.107, ma il coefficiente di clustering risulta essere uguale alla densità del grafico.
+La distribuzione del grado non segue una power law, quindi assumiamo che non sia
+presente il fenomeno rich get richer, questo inoltre è confermato dalla non eccessiva variabilità del grado dei nodi.
+Il grafo sembra essere neutrale/disassortativo, infatti il suo coefficiente è
+negativo ma è vicinissimo a 0.
+Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
+contiene tutti i nodi.
 
 ## AUTORE
 
