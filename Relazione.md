@@ -28,7 +28,6 @@ La rete così visualizzata sembra avere gruppo compatto di streamers al centro c
 - NON è un multigrafo<br>
 - NON sono presenti selfloops<br>
 - NON sono presenti nodi isolati<br>
-
 - Numero di Nodi: 7126<br>
 - Numero di Archi: 35324<br>
 - Numero di archi possibili: 50772750<br>
