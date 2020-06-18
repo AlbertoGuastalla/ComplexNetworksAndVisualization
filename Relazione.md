@@ -1,6 +1,6 @@
 # <p align="center">Complex Network Analysis</p>
 
-Introduzione
+<h1>Introduzione</h1>
 
 In questa relazione interpreto i risultati ottenuti con tre librerie di Java (JGraphT, Jung e GraphStream) e Gephi riguardanti l’analisi della rete
 Twitch Social Network (EN).
