@@ -67,49 +67,49 @@ Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers 
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.<br>
 Ho considerato diverse misure di centralità:<br><br>
 
-<h4>Degree Centrality:</h4>
+<h4>Degree Centrality</h4>
 Numero di archi incidenti su un nodo.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
 </p>
 
-<h4>Closeness Centrality:</h4>
+<h4>Closeness Centrality</h4>
 Reciproco della somma della lunghezza dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
 </p>
 
-<h4>Harmonic Closeness Centrality:</h4>
+<h4>Harmonic Closeness Centrality</h4>
 Somma dei reciproci delle lunghezze dei percorsi più brevi tra il nodo e tutti gli altri nodi nel grafico. Pertanto, più un nodo è centrale, più è vicino a tutti gli altri nodi.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
 </p>
 
-<h4>Eigenvector Centrality:</h4>
+<h4>Eigenvector Centrality</h4>
 Misura di centralità che si basa sulla centralità dei nodi vicini. Un vertice possiede uno score tanto alto quanto è alto lo score dei suoi vicini.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
 </p>
 
-<h4>Betweenness Centrality:</h4><br>
+<h4>Betweenness Centrality</h4>
 Misura di centralità che si basa sui cammini minimi attraversanti un determinato vertice. Più cammini minimi attaversano un vertice del grafo, più è alto lo score di tale vertice.
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
 </p>
 
-<h4>PageRank:</h4>
+<h4>PageRank</h4>
 Misura di centralità che si basa sulla probabilità stazionaria di essere in un determinato vertice del grafo effettuando una camminata randomica sull'ultimo. (Coincide con l'eigenvector centrality qualora il parametro "dumping-factor" venisse settato a 0.0).
 
 <p align="left">
   <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
 </p>
 
-<h4>HITS Score:</h4>
+<h4>HITS Score</h4>
 Misura di centralità che si basa su due punteggi. Un punteggio di hub che misura quanti collegamenti possiede un vertice verso altri vertici chiamati authorities e un punteggio di authority che misura da quanti archi è raggiunto tale nodo dai nodi hubs.
 (Se non specificato diversamente, ogni nodo è sia hub che authority, inoltre in un grafo non orientato il numero di archi entranti è uguale al numero di archi uscenti, quindi i due valori coincidono).
 
@@ -120,7 +120,7 @@ Misura di centralità che si basa su due punteggi. Un punteggio di hub che misur
 Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
 Invece per quanto riguarda PageRank, Eigenvetor Centrality e HITS, essendo per natura degli algoritmi che effettuano delle approssimazioni successive, è stato settato un limite di 1000 iterazioni massime.
 
-<h4>Considerazioni:</h4>
+<h4>Considerazioni</h4>
 I grafici mostrano lo score dei primi 50 vertici del grafo in ordine dcrescente di score.
 Come è possibile osservare, vi sono sempre i nodi 1773 e 4949 in testa ad ogni grafico, il che porta a pensare che essi rappresentino i nodi maggiormente "influenti" della rete.
 In tutti i grafi (ad eccezione dei due tipi di closeness centrality), si può notare un andamento esponenziale (tipico delle reti libere da scala, come già accennato prima).
@@ -132,7 +132,7 @@ Misura del grado in cui i nodi in un grafico tendono a raggrupparsi insieme.<br>
 Global Transitivity: 0.042
 Local Transitivity: 0.130
 
-<h4>Considerazioni:</h4>
+<h4>Considerazioni</h4>
 Anche se basso, il coefficiente di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
 Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coefficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
 
