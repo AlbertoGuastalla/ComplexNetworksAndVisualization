@@ -38,6 +38,7 @@ Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un 
 Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
 
 <h3><li>Distanza</li></h3>
+Distanza minima fra ogni coppia di vertici del grafo.
 
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
@@ -49,6 +50,7 @@ Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è 
 Si nota subito la presenza del fenomeno del mondo piccolo dato che la media delle distanze è molto bassa.
 
 <h3><li>Grado</li></h3>
+Numero di archi uscenti/entranti in un vertice del grafo (grafo non orientato).
 
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
@@ -63,52 +65,52 @@ Cio’ indica la presenza di hubs che potrebbero essere formati dagli streamers 
 
 <h3><li>Centralità</li></h3>
 Le misure di centralità permettono di identificare i nodi più importanti all’interno della rete.
-Abbiamo considerato diverse misure di centralità:
+Ho considerato diverse misure di centralità:<br>
 
 ● Degree Centrality:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_centrality.png"/>
 </p>
 
 ● Closeness Centrality:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/closeness_centrality.png"/>
 </p>
 
 ● Harmonic Closeness Centrality:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/harmonic_closeness_centrality.png"/>
 </p>
 
 ● Eigenvector Centrality:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/eigenvector_centrality.png"/>
 </p>
 
 ● Betweenness Centrality:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/betweeness_centrality.png"/>
 </p>
 
 ● PageRank:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/page_rank_centrality.png"/>
 </p>
 
 ● HITS Score:
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_authorities_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_authorities_centrality.png"/>
 </p>
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_hubs_centrality.png"/>
+<p align="left">
+  <img width="600px" height="300px"  src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/hits_hubs_centrality.png"/>
 </p>
 
 P.S. Per qunto riguarda il calcolo del PageRank e dell'algoritmo HITS, è stato utilizzato un dumping factor pari a 0.20.
