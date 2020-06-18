@@ -124,7 +124,7 @@ Invece per quanto riguarda PageRank, Eigenvetor Centrality e HITS, essendo per n
 I grafici mostrano lo score dei primi 50 vertici del grafo in ordine dcrescente di score.
 Come è possibile osservare, vi sono sempre i nodi 1773 e 4949 in testa ad ogni grafico, il che porta a pensare che essi rappresentino i nodi maggiormente "influenti" della rete.
 In tutti i grafi (ad eccezione dei due tipi di closeness centrality), si può notare un andamento esponenziale (tipico delle reti libere da scala, come già accennato prima).
-Nei due grafici rimanenti invece, questo comportamento "esponenziale" non è così evidente come nei casi precedenti a causa della conformazione del grafo; in altre parole, essendo la distanza media molto bassa, i vertici del grafo tendono ad essere molto vicini l'uno dall'altro e quindi gli scores di queste centrality (in particolare dei primi 50 nodi della rete) risultano essere molto simili.
+Nei due grafici rimanenti invece, questo comportamento "esponenziale" non è così evidente come nei casi precedenti a causa della conformazione del grafo; in altre parole, essendo la distanza media molto bassa, i vertici del grafo tendono ad essere molto vicini l'uno dall'altro e quindi gli scores di queste centrality (in particolare dei primi 50 nodi della rete) risultano essere molto simili.<br>
 
 <h3>Clustering Coefficient</h3>
 Misura del grado in cui i nodi in un grafico tendono a raggrupparsi insieme.<br>
@@ -134,7 +134,7 @@ Local Transitivity: 0.130
 
 <h4>Considerazioni</h4>
 Anche se basso, il coefficiente di clustering risulta almeno 60 volte più grande della densità dell'intero grafo.
-Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coefficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".
+Quindi ricapitolando, il grafo è caratterizzato da un bassissimo average path length e da un elevato clustering coefficient (rapportato alla densità del grafo), il che porta a concludere (in accordo con la teoria) che il grafo abbia la proprietà di "Small World".<br>
 
 <h3>Assortatività (omofilia)</h3>
 Permette di misurare il grado di correlazione tra i valori degli attributi dei nodi.
@@ -145,7 +145,7 @@ Non avendo attributi sui nodi, è stato usato il grado: verifichiamo se i nodi c
 tendono a collegarsi ad altri nodi con tanti archi.
 La pendenza della retta indica se c’è assortatività o meno:<br>
 - positiva: assortativo<br>
-- negativa: disassortativo<br>
+- negativa: disassortativo<br><br>
 
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_correlation.png"/>
