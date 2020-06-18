@@ -13,7 +13,7 @@ La rete non è pesata (peso su ogni arco è uguale ad 1 di default).
 La rete è stata rappresentata con il tool Gephi usando il layout Yifan Hu.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
+  <img width="300px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/network.png"/>
 </p>
 
 Considerazioni
