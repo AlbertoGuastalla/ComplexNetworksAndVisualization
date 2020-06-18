@@ -43,20 +43,21 @@ Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è 
   <img width="600px" height="300px"src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/distance_distribution.png"/>
 </p>
 - Media Distanza: 3.677<br>
-- Varianza Distanza: 0.735
+- Varianza Distanza: 0.735<br>
 
-Considerazioni:
+<h4>Considerazioni</h4>
 Si nota subito la presenza del fenomeno del mondo piccolo dato che la media delle distanze è molto bassa.
 
-3. Grado
-Grado medio: 9.914
-Varianza: 492.40
+<h3><li>Grado</li></h3>
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution.png"/>
 </p>
 
-Considerazioni
+- Media Grado: 9.914<br>
+- Varianza Grado: 492.40<br>
+
+<h4>Considerazioni</h4>
 Come sovracitato, il grafo segue una legge di potenza (almeno asintoticamente) e come si puo’ vedere nella
 versione logaritmica esso segue una retta.
 Cio’ vuol dire che la rete e’ nel regime libero da scala ed e’ presente il fenomeno rich get richer.
