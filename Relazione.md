@@ -155,7 +155,7 @@ La pendenza della retta indica se c’è assortatività o meno:
 Coefficiente di assortatività del grado: -0.336005892
 Considerazioni
 
-Il grafico mostra una marcata pendenza, in particaolare si capisce subito che l’assortatività della rete è
+Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
 negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
 Questo risultato è possibile verificarlo, osservando direttamente il grafico in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.
@@ -262,7 +262,7 @@ contiene tutti i nodi.
 Erdos-Renyi model (gnp model)
 ● Parametri
 Numero nodi: 7126
-Numero archi: 35633
+Numero archi: 35634
 ● Analisi
 ○ grafo non orientato
 ○ Densità: 0.001
@@ -289,7 +289,7 @@ negativo ma è vicinissimo a 0.
 Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
 contiene tutti i nodi.
 
-Watts-Strogatz model (gnp model)
+Watts-Strogatz model
 ● Parametri
 Numero nodi: 7126
 Numero archi: 35630
@@ -304,7 +304,7 @@ Numero archi: 35630
 ○ Assortatività (grado):
 Coefficiente: -0.04873289853
 ○ Componenti:
-Il grafo NON è connesso
+Il grafo è connesso
 ○ Comunità (Algoritmo Louvain):
 Il numero di comunità rilevate è: 55
 ● Considerazioni:
@@ -317,6 +317,36 @@ Il grafo sembra essere neutrale/disassortativo, infatti il suo coefficiente è
 negativo ma è vicinissimo a 0.
 Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
 contiene tutti i nodi.
+
+Configuration model (grafo rimescolato avente la stessa distirbuzione del grado dei nodi)
+● Parametri
+Numero nodi: 7126
+Numero archi: 33380
+● Analisi
+○ grafo non orientato
+○ Densità: 0.001
+○ Distanza media: 3.888
+○ Varianza della distanza: 9.368509682851561
+○ Grado medio: 9,369
+○ Varianza del grado: 343.3493745365369
+○ Clustering Coefficient: 0.016
+○ Assortatività (grado):
+Coefficiente: -0.3486036637
+○ Componenti:
+Componenti:
+Il grafo è connesso
+Il numero di componenti connesse è 12
+La componente connessa gigante ha 7115 nodi (ed è una sola)
+○ Comunità (Algoritmo Louvain):
+Il numero di comunità rilevate è: 28
+● Considerazioni:
+È un po più denso del grafo preso in esame.
+Il grafo è meno compatto (in termini di centralità dei nodi) di quello preso in esame.
+E' presente il fenomeno del mondo piccolo dato che la distanza media è 3.888, ed il coefficiente di clustering risulta essere 16 volte più grande della densità del grafo.
+La distribuzione del grado segue una power law, quindi assumiamo che sia
+presente il fenomeno rich get richer, questo inoltre è confermato dalla grande variabilità del grado dei nodi (proprio come nel grafo d'esame).
+Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
+negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 
 ## AUTORE
 
