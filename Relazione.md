@@ -365,6 +365,8 @@ contiene tutti i nodi.
 
 <h3>Configuration model</h3>
 
+Il modello di configurazione è un algoritmo per generare reti casuali da una determinata sequenza di gradi (degree distribution).
+
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/configuration_model.png"/>
 </p>
@@ -403,7 +405,10 @@ E' presente il fenomeno del mondo piccolo dato che la distanza media è 3.888, e
 La distribuzione del grado segue una power law, quindi assumo che sia
 presente il fenomeno rich get richer, questo inoltre è confermato dalla grande variabilità del grado dei nodi (proprio come nel grafo d'esame).
 Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
-negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.<br><br>
+negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.
+Va tenuto conto che il numero di archi non è esattamente lo stesso numero di archi del grafo orginale poichè l'algotimo utilizzato per la generazione di questo modello di configurazione ammettava anche la creazione di self-loops e/o multi-archi; collassando quindi, un multi-grafo in un semplice grafo non orientato, si vanno a perdere questi tipi di collegamenti.
+E' corretto però anche giustifare che, il numero di self-loops o di multi-archi segue la distribuzione di Poisson (di media λ), e al tendere di N (numero di vertici) a più infinito, il numero  di quest'ultimi tende a 0.
+<br><br>
 
 Per il calcolo dei due momenti, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
 
