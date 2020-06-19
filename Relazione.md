@@ -382,10 +382,10 @@ contiene tutti i nodi.
 ● Clustering Coefficient: 0.016<br>
 ● Assortatività (grado):<br>
 Coefficiente: -0.3486036637<br>
-● Componenti:
-● Il grafo è connesso<br>
-● Il numero di componenti connesse è 12<br>
-● La componente connessa gigante ha 7115 nodi (ed è una sola)<br>
+● Componenti:<br>
+Il grafo è connesso<br>
+Il numero di componenti connesse è 12<br>
+La componente connessa gigante ha 7115 nodi (ed è una sola)<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 28
   
