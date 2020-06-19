@@ -420,8 +420,6 @@ Una cascata di informazioni è un fenomeno descritto nell'economia comportamenta
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior.png"/>
 </p>
 
-IMMAGINE
-
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo a partire da uno dei nodi maggiormente "influenti" della rete, ovvero il vertice 1773.
 Una volta generato il segnale (vero o falso) del nodo sorgente (1773), si è calcolato il segnale per tutti gli altri nodi della rete;
 il segnale del nodo i-esimo è stato calcolato tenendo conto esclusivamente dei segnali provenienti dai nodi adiacenti utilizzando la regola di Bayes per segnali multipli come discriminante proprio come nell'esperimento di Herding.
