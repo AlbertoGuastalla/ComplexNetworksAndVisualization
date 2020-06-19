@@ -278,7 +278,7 @@ contiene tutti i nodi.
 Descrizione<br>
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/erdos_model.png"/>
 </p>
 
 <h4>Parametri</h4>
