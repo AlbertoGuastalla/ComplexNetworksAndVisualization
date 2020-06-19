@@ -170,7 +170,7 @@ Esso ha una sola componente.
 <h3><li>Eccentricità</li></h3>
 È la massima distanza tra un nodo e tutti gli altri nodi della rete.<br>
 Permette di misurare quanto ogni nodo si trova lontano dal centro della rete.<br>
-La distanza tra due nodi è la lunghezza del cammino più breve che li collega.<br>
+La distanza tra due nodi è la lunghezza del cammino più breve che li collega.<br><br>
 - Diametro della rete: 10 (eccentricità più grande)<br>
 - Raggio della rete: 6 (eccentricità più piccola)<br>
 - Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è massima: 5<br>
@@ -181,11 +181,11 @@ Dato che il grafo non è orientato, è stato possibile calcolare l’eccentricit
 Il numero di nodi che possiedono il valore di eccentricità pari al raggio del grafo sono molti; questo è una conferma sul fatto che gran parte dei nodi del grafo siano posizionati al centro del grafo stesso.
 
 <h3><li>Core e periferia</li></h3>
-Una rete sociale è formata da 2 tipi di nodi:<br>
+Una rete sociale è formata da 2 tipi di nodi:<br><br>
 - Core (i nodi che sono più o meno strettamente interconnessi)<br>
 - Periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)<br><br>
 
-Nodi del core: 1153 (k-core con k=10)
+Nodi del core: 1153 (k-core con k=10)<br>
 - Archi del core: 12782<br>
 - Nodi della periferia: 5973
 
@@ -194,7 +194,7 @@ Il core è localizzato nel cuore della rete, mentre la periferia è composta dei
 
 <h3><li>Community</h3><li>
 Ricerca del miglior partizionamento (communities) basato sulla misura della modularità.
-La modularità m è la differenza tra:<br>
+La modularità m è la differenza tra:<br><br>
 - la frazione degli archi che ricadono all'interno delle comunità date e<br>
 - la frazione attesa se gli archi fossero distribuiti in modo casuale (conservando i gradi dei nodi)<br>
 - Se la maggior parte degli archi è incidente ai nodi all'interno della stessa comunità, la
