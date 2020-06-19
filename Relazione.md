@@ -158,14 +158,16 @@ Coefficiente di assortatività del grado: -0.336005892
 Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
 negativa. Ciò è anche confermato dal coefficiente angolare della retta che è negativo.
 Possiamo quindi concludere che è presente un segnale di omofilia inversa o disassortatività rispetto al grado dei nodi.
-Questo risultato è possibile verificarlo, osservando direttamente il grafico in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.</ol>
+Questo risultato è possibile verificarlo, osservando direttamente il grafo in cui si nota subito che, spostandosi dal centro alla periferia, il grado dei nodi va man mano diminuendo.</ol>
 
 <h2>Struttura</h2>
 
-1. Componenti
+<ol>
+<h3><li>Componenti</li></h3>
 Essendo un grafo non orientato, esso è fortemente connesso.
+Esso ha una sola componente.
 
-2. Eccentricità
+<h3><li>Eccentricità</li></h3>
 È la massima distanza tra un nodo e tutti gli altri nodi della rete.
 Permette di misurare quanto ogni nodo si trova lontano dal centro della rete.
 La distanza tra due nodi è la lunghezza del cammino più breve che li collega.
@@ -174,36 +176,34 @@ Raggio della rete: 6 (eccentricità più piccola)
 Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è massima: 5
 Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è minima: 1115
 
-Considerazioni:
-Dato il grafo non è orientato, è stato possibile calcolare l’eccentricità dei
-suoi nodi.
+<h4>Considerazioni</h4>
+Dato che il grafo non è orientato, è stato possibile calcolare l’eccentricità di tutti i suoi nodi.
 Il numero di nodi che possiedono il valore di eccentricità pari al raggio del grafo sono molti; questo è una conferma sul fatto che gran parte dei nodi del grafo siano posizionati al centro del grafo stesso.
 
-3. Core e periferia
+<h3><li>Core e periferia</li></h3>
 Una rete sociale è formata da 2 tipi di nodi:
-● core (i nodi che sono più o meno strettamente interconnessi)
-● periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)
+● Core (i nodi che sono più o meno strettamente interconnessi)
+● Periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)
 
 Nodi del core: 1153 (k-core con k=10)
 Archi del core: 12782
 Nodi della periferia: 5973
 
-Considerazioni:
+<h4>Considerazioni</h4>
 Il core è localizzato nel cuore della rete, mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
 
-Community
+<h3><li>Community</h3><li>
+Ricerca del miglior partizionamento (communities) basato sulla misura della modularità.
 La modularità m è la differenza tra:
 - la frazione degli archi che ricadono all'interno delle comunità date e
-- la frazione attesa se gli archi fossero distribuiti in modo casuale
-(conservando i gradi dei nodi)
-Il valore di m è compreso tra -0,5 (incluso) e 1 (escluso):
+- la frazione attesa se gli archi fossero distribuiti in modo casuale (conservando i gradi dei nodi)
 - Se la maggior parte degli archi è incidente ai nodi all'interno della stessa comunità, la
-modularità è molto alta, vicina (ma non uguale) a 1 e la partizione proposta descrive una
+modularità sarà positivca e la partizione proposta descrive una
 struttura della comunità molto buona.
-- La modularità di -0.5 significa che i nodi all'interno della stessa comunità non sono
+- Modularità negativa significa che i nodi all'interno della stessa comunità non sono
 affatto adiacenti, la struttura della comunità proposta è peggiore di quella casuale.
 
-Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score)
+<h4>Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score)</h4>
 Parametri:
 Risoluzione: 1.0
 Randomizzazione: Si
@@ -225,7 +225,7 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
-</p>
+</p></ol>
 
 Modelli causali
 
