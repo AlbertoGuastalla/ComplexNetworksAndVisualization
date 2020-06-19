@@ -229,29 +229,32 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities1.png"/>
 </p></ol>
 
-Modelli causali
+<h2>Modelli causali</h2>
 
-Barabasi-Albert model
-● Parametri:
-- numero nodi: 7126
-- numero di archi: 39675
+<h3>Barabasi-Albert model</h3>
 
-● Analisi
-○ grafo non orientato
-○ Densità: 0.002
-○ Distanza media: 3.481
-○ Varianza della distanza: 0.447
-○ Grado medio: 11.135
-○ Varianza del grado: 260.08
-○ Clustering Coefficient: 0.014
-○ Assortatività (grado):
-Coefficiente: -0.03646606436
-○ Componenti:
-Il grafo è connesso
-Il numero di componenti connesse è 1
-○ Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):
+Il modello Barabási–Albert (BA) è un modello per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale.
+
+<h4>Parametri</h4>
+- Numero nodi: 7126<br>
+- Numero di archi: 39675
+
+<h4>Analisi</h4>
+- Grafo non orientato<br>
+- Densità: 0.002<br>
+- Distanza media: 3.481<br>
+- Varianza della distanza: 0.447<br>
+- Grado medio: 11.135<br>
+- Varianza del grado: 260.08<br>
+- Clustering Coefficient: 0.014<br>
+- Assortatività (grado):<br>
+Coefficiente: -0.03646606436<br>
+- Componenti:<br>
+Il grafo è connesso<br>
+Il numero di componenti connesse è 1<br>
+- Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 20
-● Considerazioni:
+<h4>Considerazioni</h4>
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) del grafo preso in esame.
 E' parzialmente presente il fenomeno del mondo piccolo dato che la distanza media è 3.481, ma il coefficiente di clustering non è così elevato rapportato alla densità del grafo.
