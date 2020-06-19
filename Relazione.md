@@ -254,6 +254,15 @@ Il grafo è connesso<br>
 Il numero di componenti connesse è 1<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 20
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_barabasi.png"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
+</p>
+
 <h4>Considerazioni</h4>
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) del grafo preso in esame.
@@ -264,26 +273,35 @@ negativo ma è piuttosto vicino a 0.
 Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
 contiene tutti i nodi.
 
-Erdos-Renyi model (gnp model)
-● Parametri
-Numero nodi: 7126
-Numero archi: 35634
-● Analisi
-○ grafo non orientato
-○ Densità: 0.001
-○ Distanza media: 4.107
-○ Varianza della distanza: 0.452
-○ Grado medio: 10.001
-○ Varianza del grado: 9.868
-○ Clustering Coefficient: 0.001
-○ Assortatività (grado):
+<h3>Erdos-Renyi model (gnp model)</h3>
+<h4>Parametri</h4>
+● Numero nodi: 7126
+● Numero archi: 35634
+<h4>Analisi</h4>
+● grafo non orientato
+● Densità: 0.001
+● Distanza media: 4.107
+● Varianza della distanza: 0.452
+● Grado medio: 10.001
+● Varianza del grado: 9.868
+● Clustering Coefficient: 0.001
+● Assortatività (grado):
 Coefficiente: -0.009384953056
-○ Componenti:
+● Componenti:
 Il grafo è connesso
 Il numero di componenti connesse è 1
-○ Comunità (Algoritmo Louvain):
+● Comunità (Algoritmo Louvain):
 Il numero di comunità rilevate è: 21
-● Considerazioni:
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_erdos.png"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
+</p>
+
+<h4>Considerazioni</h4>
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) di quello generato dal modello di Barabasi-Albert.
 E' parzialmente presente il fenomeno del mondo piccolo dato che la distanza media è 4.107, ma il coefficiente di clustering risulta essere uguale alla densità del grafico.
