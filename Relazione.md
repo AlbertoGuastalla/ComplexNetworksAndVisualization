@@ -236,23 +236,23 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 Il modello Barabási–Albert (BA) è un modello per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale.
 
 <h4>Parametri</h4>
-- Numero nodi: 7126<br>
-- Numero di archi: 39675
+● Numero nodi: 7126<br>
+● Numero di archi: 39675
 
 <h4>Analisi</h4>
-- Grafo non orientato<br>
-- Densità: 0.002<br>
-- Distanza media: 3.481<br>
-- Varianza della distanza: 0.447<br>
-- Grado medio: 11.135<br>
-- Varianza del grado: 260.08<br>
-- Clustering Coefficient: 0.014<br>
-- Assortatività (grado):<br>
+● Grafo non orientato<br>
+● Densità: 0.002<br>
+● Distanza media: 3.481<br>
+● Varianza della distanza: 0.447<br>
+● Grado medio: 11.135<br>
+● Varianza del grado: 260.08<br>
+● Clustering Coefficient: 0.014<br>
+● Assortatività (grado):<br>
 Coefficiente: -0.03646606436<br>
-- Componenti:<br>
+● Componenti:<br>
 Il grafo è connesso<br>
 Il numero di componenti connesse è 1<br>
-- Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
+● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 20
 <h4>Considerazioni</h4>
 È un po più denso del grafo preso in esame.
