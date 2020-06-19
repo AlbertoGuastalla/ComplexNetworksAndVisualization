@@ -370,23 +370,23 @@ contiene tutti i nodi.
 </p>
 
 <h4>Parametri</h4>
-● Numero nodi: 7126
+● Numero nodi: 7126<br>
 ● Numero archi: 33380
 <h4>Analisi</h4>
-● Grafo non orientato
-● Densità: 0.001
-● Distanza media: 3.888
-● Varianza della distanza: 9.368509682851561
-● Grado medio: 9,369
-● Varianza del grado: 343.3493745365369
-● Clustering Coefficient: 0.016
-● Assortatività (grado):
-Coefficiente: -0.3486036637
+● Grafo non orientato<br>
+● Densità: 0.001<br>
+● Distanza media: 3.888<br>
+● Varianza della distanza: 9.368509682851561<br>
+● Grado medio: 9,369<br>
+● Varianza del grado: 343.3493745365369<br>
+● Clustering Coefficient: 0.016<br>
+● Assortatività (grado):<br>
+Coefficiente: -0.3486036637<br>
 ● Componenti:
 <h4>Componenti<h4>
-● Il grafo è connesso
-● Il numero di componenti connesse è 12
-● La componente connessa gigante ha 7115 nodi (ed è una sola)
+● Il grafo è connesso<br>
+● Il numero di componenti connesse è 12<br>
+● La componente connessa gigante ha 7115 nodi (ed è una sola)<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 28
   
