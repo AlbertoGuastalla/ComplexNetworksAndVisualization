@@ -428,7 +428,13 @@ Come si nota facilmnte anche dall'immagine, la quasi totalità dei nodi (quasi i
 <h4>Parametri</h4>
 ● Stato del mondo: 0 (con probabilità 0.5), 1 (con probabilità 0.5)<br>
 ● Segnale:<br> High | Status = 0 (con probabilità 2/3), Low | Status = 0 (con probabilità 1/3)<br>
-High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3)<br>
+High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3)<br><br>
+
+Effettuando invece un'altra simulazione, però partendo da un nodo meno influente come ad esmepio il nodo 0, si nota anche dall'immagine, che la cascata ha coinvolto meno nodi di quella di prima. Infatti all'incirca il 93% ha generato un segnale "High", al contrario della simulazione di prima che aveva coinvolto all'incirca il 96% dei vertici della rete.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior1.png"/>
+</p>
 
 ## AUTORE
 
