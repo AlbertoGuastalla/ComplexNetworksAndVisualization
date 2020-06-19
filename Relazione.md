@@ -233,7 +233,7 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 
 <h3>Barabasi-Albert model</h3>
 
-Il modello Barabási–Albert (BA) è un modello per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale.
+Il modello Barabási–Albert (BA) è un algoritmo per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale con una distribuzione esponenziale negativa del grado fra i vertici del grafo.
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
@@ -259,6 +259,8 @@ Il numero di componenti connesse è 1<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 20
 
+<h4>Distribuzione del grado</h4>
+
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_barabasi.png"/>
 </p>
@@ -275,7 +277,7 @@ contiene tutti i nodi.
 
 <h3>Erdos-Renyi model (gnp model)</h3>
 
-Descrizione<br>
+Il modello Erdos-Renyi è un algoritmo per la generazione di reti casuali con distribuzione Poissoniana del grado fra i vertici del grafo.
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/erdos_model.png"/>
@@ -299,6 +301,8 @@ Il grafo è connesso<br>
 Il numero di componenti connesse è 1<br>
 ● Comunità (Algoritmo Louvain):<br>
 Il numero di comunità rilevate è: 21
+
+<h4>Distribuzione del grado</h4>
 
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_erdos.png"/>
