@@ -410,7 +410,7 @@ Va tenuto conto che il numero di archi non è esattamente lo stesso numero di ar
 E' corretto però anche giustifare che, il numero di self-loops o di multi-archi segue la distribuzione di Poisson (di media λ), e al tendere di N (numero di vertici) a più infinito, il numero  di quest'ultimi tende a 0.
 <br><br>
 
-Per il calcolo dei due momenti, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
+Per il calcolo dei momenti di ciascuna distribuzione, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
 
 ## AUTORE
 
