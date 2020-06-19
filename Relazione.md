@@ -320,6 +320,13 @@ Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente g
 contiene tutti i nodi.
 
 <h3>Watts-Strogatz model</h3>
+
+Il modello Watts-Strogatz è un algoritmo di generazione di grafi casuali aventi la proprietà di "Small World", tra cui brevi percorsi medi e clustering elevato.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/watts_model.png"/>
+</p>
+
 <h4>Parametri</h4>
 ● Numero nodi: 7126<br>
 ● Numero archi: 35630
@@ -337,6 +344,12 @@ Coefficiente: -0.04873289853<br>
 Il grafo è connesso<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 55
+
+<h4>Distribuzione del grado</h4>
+
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_watts.png"/>
+</p>
 
 <h4>Considerazioni</h4>
 
