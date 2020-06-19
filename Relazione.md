@@ -168,59 +168,61 @@ Essendo un grafo non orientato, esso è fortemente connesso.
 Esso ha una sola componente.
 
 <h3><li>Eccentricità</li></h3>
-È la massima distanza tra un nodo e tutti gli altri nodi della rete.
-Permette di misurare quanto ogni nodo si trova lontano dal centro della rete.
-La distanza tra due nodi è la lunghezza del cammino più breve che li collega.
-Diametro della rete: 10 (eccentricità più grande)
-Raggio della rete: 6 (eccentricità più piccola)
-Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è massima: 5
-Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è minima: 1115
+È la massima distanza tra un nodo e tutti gli altri nodi della rete.<br>
+Permette di misurare quanto ogni nodo si trova lontano dal centro della rete.<br>
+La distanza tra due nodi è la lunghezza del cammino più breve che li collega.<br>
+- Diametro della rete: 10 (eccentricità più grande)<br>
+- Raggio della rete: 6 (eccentricità più piccola)<br>
+- Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è massima: 5<br>
+- Numero di nodi facenti parte del sottografo indotto dai vertici la cui eccentricità è minima: 1115
 
 <h4>Considerazioni</h4>
 Dato che il grafo non è orientato, è stato possibile calcolare l’eccentricità di tutti i suoi nodi.
 Il numero di nodi che possiedono il valore di eccentricità pari al raggio del grafo sono molti; questo è una conferma sul fatto che gran parte dei nodi del grafo siano posizionati al centro del grafo stesso.
 
 <h3><li>Core e periferia</li></h3>
-Una rete sociale è formata da 2 tipi di nodi:
-● Core (i nodi che sono più o meno strettamente interconnessi)
-● Periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)
+Una rete sociale è formata da 2 tipi di nodi:<br>
+- Core (i nodi che sono più o meno strettamente interconnessi)<br>
+- Periferia (i nodi che sono strettamente collegati al core, ma solo debolmente tra loro)<br><br>
 
 Nodi del core: 1153 (k-core con k=10)
-Archi del core: 12782
-Nodi della periferia: 5973
+- Archi del core: 12782<br>
+- Nodi della periferia: 5973
 
 <h4>Considerazioni</h4>
 Il core è localizzato nel cuore della rete, mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
 
 <h3><li>Community</h3><li>
 Ricerca del miglior partizionamento (communities) basato sulla misura della modularità.
-La modularità m è la differenza tra:
-- la frazione degli archi che ricadono all'interno delle comunità date e
-- la frazione attesa se gli archi fossero distribuiti in modo casuale (conservando i gradi dei nodi)
+La modularità m è la differenza tra:<br>
+- la frazione degli archi che ricadono all'interno delle comunità date e<br>
+- la frazione attesa se gli archi fossero distribuiti in modo casuale (conservando i gradi dei nodi)<br>
 - Se la maggior parte degli archi è incidente ai nodi all'interno della stessa comunità, la
 modularità sarà positivca e la partizione proposta descrive una
-struttura della comunità molto buona.
+struttura della comunità molto buona.<br>
 - Modularità negativa significa che i nodi all'interno della stessa comunità non sono
 affatto adiacenti, la struttura della comunità proposta è peggiore di quella casuale.
 
 <h4>Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score)</h4>
-Parametri:
-Risoluzione: 1.0
-Randomizzazione: Si
-Risultati:
-Modularità: 0.451
-Numero comunità rilevate: 16
+<h5>Parametri</h5>
+- Risoluzione: 1.0<br>
+- Randomizzazione: Si
+<h5>Risultati</h5>
+- Modularità: 0.451<br>
+- Numero comunità rilevate: 16
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/communities.png"/>
 </p>
 
-Risoluzione: 2.0
-Risultati:
-Modularità: 0.37
-Numero comunità rilevate: 3
+<h5>Parametri</h5>
+- Risoluzione: 2.0<br>
+- Randomizzazione: Si
+<h5>Risultati</h5>
+- Modularità: 0.37<br>
+- Numero comunità rilevate: 3
 
-Considerazioni:
+<h4>Considerazioni</h4>
 Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese (anche se la modularità è leggermente più bassa).
 
 <p align="center">
