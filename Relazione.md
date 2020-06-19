@@ -412,6 +412,26 @@ E' corretto però anche giustifare che, il numero di self-loops o di multi-archi
 
 Per il calcolo dei momenti di ciascuna distribuzione, è stato utilizzato l'algoritmo online one pass di Wellford per avere una maggiore stabilità numerica.
 
+<h2>Cascading Behavior</h2>
+
+Una cascata di informazioni è un fenomeno descritto nell'economia comportamentale e nella teoria delle reti in cui un certo numero di persone prende la stessa decisione in modo sequenziale.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior.png"/>
+</p>
+
+IMMAGINE
+
+Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo a partire da uno dei nodi maggiormente "influenti" della rete, ovvero il vertice 1773.
+Una volta generato il segnale (vero o falso) del nodo sorgente (1773), si è calcolato il segnale per tutti gli altri nodi della rete;
+il segnale del nodo i-esimo è stato calcolato tenendo conto esclusivamente dei segnali provenienti dai nodi adiacenti utilizzando la regola di Bayes per segnali multipli come discriminante proprio come nell'esperimento di Herding.
+Come si nota facilemnte anche dall'immagine, la quasi totalità dei nodi (quasi il 96%) ha seguito il primo segnale del nodo sorgente e solamente una piccola porzione della rete (all'incirca il 4%), ha generato il segnale opposto.
+
+<h4>Parametri</h4>
+● Stato del mondo: 0 (con probabilità 0.5), 1 (con probabilità 0.5)<br>
+● Segnale: High | Status = 0 (con probabilità 2/3), Low | Status = 0 (con probabilità 1/3)<br>
+High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3)<br>
+
 ## AUTORE
 
 * **Alberto Guastalla** - [AlbertoGuastalla](https://github.com/AlbertoGuastalla)
