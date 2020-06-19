@@ -429,7 +429,7 @@ Come si nota facilmnte anche dall'immagine, la quasi totalità dei nodi (quasi i
 
 <h4>Parametri</h4>
 ● Stato del mondo: 0 (con probabilità 0.5), 1 (con probabilità 0.5)<br>
-● Segnale: High | Status = 0 (con probabilità 2/3), Low | Status = 0 (con probabilità 1/3)<br>
+● Segnale:<br> High | Status = 0 (con probabilità 2/3), Low | Status = 0 (con probabilità 1/3)<br>
 High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3)<br>
 
 ## AUTORE
