@@ -192,7 +192,7 @@ Nodi del core: 1153 (k-core con k=10)<br>
 <h4>Considerazioni</h4>
 Il core è localizzato nel cuore della rete, mentre la periferia è composta dei nodi che fluttuano all'esterno del core.
 
-<h3><li>Community</h3><li>
+<h3><li>Community</h3></li>
 Ricerca del miglior partizionamento (communities) basato sulla misura della modularità.
 La modularità m è la differenza tra:<br><br>
 - la frazione degli archi che ricadono all'interno delle comunità date e<br>
