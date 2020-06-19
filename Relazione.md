@@ -383,7 +383,6 @@ contiene tutti i nodi.
 ● Assortatività (grado):<br>
 Coefficiente: -0.3486036637<br>
 ● Componenti:
-<h4>Componenti<h4>
 ● Il grafo è connesso<br>
 ● Il numero di componenti connesse è 12<br>
 ● La componente connessa gigante ha 7115 nodi (ed è una sola)<br>
