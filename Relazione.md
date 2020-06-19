@@ -255,8 +255,8 @@ Il numero di componenti connesse è 1<br>
 ● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 20
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_barabasi.png"/>
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_barabasi.png"/>
 </p>
 
 <p align="center">
@@ -293,8 +293,8 @@ Il numero di componenti connesse è 1
 ● Comunità (Algoritmo Louvain):
 Il numero di comunità rilevate è: 21
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_erdos.png"/>
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_erdos.png"/>
 </p>
 
 <p align="center">
