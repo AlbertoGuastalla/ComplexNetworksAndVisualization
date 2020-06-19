@@ -287,7 +287,7 @@ Il modello Erdos-Renyi è un algoritmo per la generazione di reti casuali con di
 ● Numero nodi: 7126<br>
 ● Numero archi: 35634
 <h4>Analisi</h4>
-● grafo non orientato<br>
+● Grafo non orientato<br>
 ● Densità: 0.001<br>
 ● Distanza media: 4.107<br>
 ● Varianza della distanza: 0.452<br>
@@ -299,7 +299,7 @@ Coefficiente: -0.009384953056<br>
 ● Componenti:<br>
 Il grafo è connesso<br>
 Il numero di componenti connesse è 1<br>
-● Comunità (Algoritmo Louvain):<br>
+● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 21
 
 <h4>Distribuzione del grado</h4>
@@ -319,25 +319,27 @@ negativo ma è vicinissimo a 0.
 Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
 contiene tutti i nodi.
 
-Watts-Strogatz model
-● Parametri
-Numero nodi: 7126
-Numero archi: 35630
-● Analisi
-○ grafo non orientato
-○ Densità: 0.001
-○ Distanza media: 4.323
-○ Varianza della distanza: 0.484
-○ Grado medio: 9.999
-○ Varianza del grado: 3.721
-○ Clustering Coefficient: 0.088
-○ Assortatività (grado):
-Coefficiente: -0.04873289853
-○ Componenti:
-Il grafo è connesso
-○ Comunità (Algoritmo Louvain):
+<h3>Watts-Strogatz model</h3>
+<h4>Parametri</h4>
+● Numero nodi: 7126<br>
+● Numero archi: 35630
+<h4>Analisi</h4>
+● Grafo non orientato<br>
+● Densità: 0.001<br><br>
+● Distanza media: 4.323<br>
+● Varianza della distanza: 0.484<br>
+● Grado medio: 9.999<br>
+● Varianza del grado: 3.721<br>
+● Clustering Coefficient: 0.088<br>
+● Assortatività (grado):<br>
+Coefficiente: -0.04873289853<br>
+● Componenti:<br>
+Il grafo è connesso<br>
+● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 55
-● Considerazioni:
+
+<h4>Considerazioni</h4>
+
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) di quello generato dal modello di Barabasi-Albert.
 E' presente il fenomeno del mondo piccolo dato che la distanza media è 4.323, ed il coefficiente di clustering risulta essere addirittura 88 volte più grande della densità del grafo.
