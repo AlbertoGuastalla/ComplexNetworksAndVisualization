@@ -312,7 +312,7 @@ Il numero di comunità rilevate è: 21
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) di quello generato dal modello di Barabasi-Albert.
 E' parzialmente presente il fenomeno del mondo piccolo dato che la distanza media è 4.107, ma il coefficiente di clustering risulta essere uguale alla densità del grafico.
-La distribuzione del grado non segue una power law, quindi assumiamo che non sia
+La distribuzione del grado non segue una power law (anzi una curva gaussiana), quindi assumo che non sia
 presente il fenomeno rich get richer, questo inoltre è confermato dalla non eccessiva variabilità del grado dei nodi.
 Il grafo sembra essere neutrale/disassortativo, infatti il suo coefficiente è
 negativo ma è vicinissimo a 0.
