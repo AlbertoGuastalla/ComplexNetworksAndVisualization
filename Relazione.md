@@ -235,6 +235,10 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 
 Il modello Barabási–Albert (BA) è un modello per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale.
 
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
+</p>
+
 <h4>Parametri</h4>
 ● Numero nodi: 7126<br>
 ● Numero di archi: 39675
@@ -259,10 +263,6 @@ Il numero di comunità rilevate è: 20
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_barabasi.png"/>
 </p>
 
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
-</p>
-
 <h4>Considerazioni</h4>
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) del grafo preso in esame.
@@ -274,31 +274,34 @@ Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente g
 contiene tutti i nodi.
 
 <h3>Erdos-Renyi model (gnp model)</h3>
+
+Descrizione<br>
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
+</p>
+
 <h4>Parametri</h4>
-● Numero nodi: 7126
+● Numero nodi: 7126<br>
 ● Numero archi: 35634
 <h4>Analisi</h4>
-● grafo non orientato
-● Densità: 0.001
-● Distanza media: 4.107
-● Varianza della distanza: 0.452
-● Grado medio: 10.001
-● Varianza del grado: 9.868
-● Clustering Coefficient: 0.001
-● Assortatività (grado):
-Coefficiente: -0.009384953056
-● Componenti:
-Il grafo è connesso
-Il numero di componenti connesse è 1
-● Comunità (Algoritmo Louvain):
+● grafo non orientato<br>
+● Densità: 0.001<br>
+● Distanza media: 4.107<br>
+● Varianza della distanza: 0.452<br>
+● Grado medio: 10.001<br>
+● Varianza del grado: 9.868<br>
+● Clustering Coefficient: 0.001<br>
+● Assortatività (grado):<br>
+Coefficiente: -0.009384953056<br>
+● Componenti:<br>
+Il grafo è connesso<br>
+Il numero di componenti connesse è 1<br>
+● Comunità (Algoritmo Louvain):<br>
 Il numero di comunità rilevate è: 21
 
 <p align="left">
   <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_erdos.png"/>
-</p>
-
-<p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
 </p>
 
 <h4>Considerazioni</h4>
