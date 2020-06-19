@@ -356,39 +356,52 @@ Il numero di comunità rilevate è: 55
 È un po più denso del grafo preso in esame.
 Il grafo è ancora più compatto (in termini di centralità dei nodi) di quello generato dal modello di Barabasi-Albert.
 E' presente il fenomeno del mondo piccolo dato che la distanza media è 4.323, ed il coefficiente di clustering risulta essere addirittura 88 volte più grande della densità del grafo.
-La distribuzione del grado non segue una power law, quindi assumiamo che non sia
+La distribuzione del grado non segue una power law (anzi sembrerebbe una cura chi-quadro), quindi assumo che non sia
 presente il fenomeno rich get richer, questo inoltre è confermato dalla non eccessiva variabilità del grado dei nodi.
 Il grafo sembra essere neutrale/disassortativo, infatti il suo coefficiente è
 negativo ma è vicinissimo a 0.
 Non essendo diretto ed essendo connesso, ovviamente c’è una sola componente gigante che
 contiene tutti i nodi.
 
-Configuration model (grafo rimescolato avente la stessa distirbuzione del grado dei nodi)
-● Parametri
-Numero nodi: 7126
-Numero archi: 33380
-● Analisi
-○ grafo non orientato
-○ Densità: 0.001
-○ Distanza media: 3.888
-○ Varianza della distanza: 9.368509682851561
-○ Grado medio: 9,369
-○ Varianza del grado: 343.3493745365369
-○ Clustering Coefficient: 0.016
-○ Assortatività (grado):
+<h3>Configuration model</h3>
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/configuration_model.png"/>
+</p>
+
+<h4>Parametri</h4>
+● Numero nodi: 7126
+● Numero archi: 33380
+<h4>Analisi</h4>
+● Grafo non orientato
+● Densità: 0.001
+● Distanza media: 3.888
+● Varianza della distanza: 9.368509682851561
+● Grado medio: 9,369
+● Varianza del grado: 343.3493745365369
+● Clustering Coefficient: 0.016
+● Assortatività (grado):
 Coefficiente: -0.3486036637
-○ Componenti:
-Componenti:
-Il grafo è connesso
-Il numero di componenti connesse è 12
-La componente connessa gigante ha 7115 nodi (ed è una sola)
-○ Comunità (Algoritmo Louvain):
+● Componenti:
+<h4>Componenti<h4>
+● Il grafo è connesso
+● Il numero di componenti connesse è 12
+● La componente connessa gigante ha 7115 nodi (ed è una sola)
+● Algoritmo di Gephi (Blondel Guillaume Lefebvre based on modularity score):<br>
 Il numero di comunità rilevate è: 28
-● Considerazioni:
+  
+<h4>Distribuzione del grado</h4>
+
+<p align="left">
+  <img width="600px" height="300px" src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/degree_distribution_configuration.png"/>
+</p>
+  
+<h4>Considerazioni</h4>
+
 È un po più denso del grafo preso in esame.
 Il grafo è meno compatto (in termini di centralità dei nodi) di quello preso in esame.
 E' presente il fenomeno del mondo piccolo dato che la distanza media è 3.888, ed il coefficiente di clustering risulta essere 16 volte più grande della densità del grafo.
-La distribuzione del grado segue una power law, quindi assumiamo che sia
+La distribuzione del grado segue una power law, quindi assumo che sia
 presente il fenomeno rich get richer, questo inoltre è confermato dalla grande variabilità del grado dei nodi (proprio come nel grafo d'esame).
 Il grafico mostra una marcata pendenza, in particolare si capisce subito che l’assortatività della rete è
 negativa, ciò è anche confermato dal coefficiente angolare della retta che è negativo.<br><br>
