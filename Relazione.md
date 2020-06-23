@@ -442,7 +442,7 @@ All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, p
 La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
 </p>
 
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
@@ -453,7 +453,7 @@ Questo può essere dovuto anche al valore di soglia individuale per ciascun nodo
 Nella seconda simulazione invece, sono stati scelti i primi 1000 nodi "più influenti" della rete; ora la cascata è un pò più marcata, infatti il 35% dei nodi dela rete ha adottato il nuovo prodotto.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
 </p>
 
 All'interno dell'algoritmo non è stato insierito un limite massimo di iterazioni, poichè un nodo non può essere più volte aggiornato (l'evoluzione del sistema è monotona).
