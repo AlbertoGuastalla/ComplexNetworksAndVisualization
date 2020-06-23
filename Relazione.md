@@ -423,7 +423,7 @@ Una cascata di informazioni è un fenomeno descritto nell'economia comportamenta
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo a partire da uno dei nodi maggiormente "influenti" della rete, ovvero il vertice 1773.
 Una volta generato il segnale (vero o falso) del nodo sorgente (1773), si è calcolato il segnale per tutti gli altri nodi della rete;
 il segnale del nodo i-esimo è stato calcolato tenendo conto esclusivamente dei segnali provenienti dai nodi adiacenti utilizzando la regola di Bayes per segnali multipli come discriminante proprio come nell'esperimento di Herding.
-Come si nota facilmnte anche dall'immagine, la quasi totalità dei nodi (quasi il 96%) ha seguito il primo segnale del nodo sorgente e solamente una piccola porzione della rete (all'incirca il 4%), ha generato il segnale opposto.
+Come si nota facilmente anche dall'immagine, la quasi totalità dei nodi (quasi il 96%) ha seguito il primo segnale del nodo sorgente e solamente una piccola porzione della rete (all'incirca il 4%), ha generato il segnale opposto.
 
 <h4>Parametri</h4>
 ● Stato del mondo: 0 (con probabilità 0.5), 1 (con probabilità 0.5)<br>
@@ -432,8 +432,52 @@ High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3
 
 Effettuando invece un'altra simulazione, però partendo da un nodo meno influente come ad esempio il nodo 0, si nota anche dall'immagine, che la cascata ha coinvolto meno nodi di quella di prima. Infatti all'incirca il 93% ha generato un segnale "High", al contrario della simulazione di prima che aveva coinvolto all'incirca il 96% dei vertici della rete.
 
+All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, poichè un nodo può essere più volte aggiornato (l'evoluzione del sistema non è monotona).
+
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior1.png"/>
+</p>
+
+<h2>Diffusion of Innovation</h2>
+La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
+</p>
+
+Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
+Sono stati scelti 1000 nodi random come "initial adopters" di un determinato prodotto da diffondere nella rete.
+Il risultato è stato che solo il 17% dei nodi hanno adottato questo nuovo prodotto; vi è stata quindi una cascata molto ridotta.
+Questo può essere dovuto anche al valore di soglia individuale per ciascun nodo.
+
+Nella seconda simulazione invece, sono stati scelti i primi 1000 nodi "più influenti" della rete; ora la cascata è un pò più marcata, infatti il 35% dei nodi dela rete ha adottato il nuovo prodotto.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
+</p>
+
+All'interno dell'algoritmo non è stato insierito un limite massimo di iterazioni, poichè un nodo non può essere più volte aggiornato (l'evoluzione del sistema è monotona).
+
+<h2>Epidemics</h2>
+Un'epidemia è la rapida diffusione di una malattia in un gran numero di persone in un breve periodo di tempo.
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/sirmodel.png"/>
+</p>
+
+Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
+Sono stati scelti 100 nodi random come "initial infected" di una determinata malattia.
+L'algoritmo implementato si propone di simulare il famoso modello SIR, in cui inizialmente si hanno solo 100 infetti e tutti gli altri nodi della rete come suscettibili (nessuna immunità acquisita iniziale per semplicità).
+In tale modello i nodi possono essere partizionati in tre insiemi: Suscettibili, Infetti, Rimossi.
+Ad ogni iterazione, un nodo sucettibile può passare ad infetto con una certa probabilità β (per ciascun nodo infetto vicino) e un nodo infetto può passare a rimosso con una certa probabilità μi.
+Nella prima simulazione si sono utilizzati come parametri: μi = 0.5 e β = 0.5 e all'incirca il 92.37% die nodi sono rimossi, il 7.62% è rimasto suscettibile e solamente lo 0.1% è rimasto infetto.
+Possiamo quindi affermare che la quasi totalità della rete ha contratto il virus ma l'epidemia non è diventata pandemica producendo la cosidetta immunità di gregge.
+
+Nella seconda simulazione, si sono utilizzati come parametri: μi = 0.02 e β = 0.02 e all'incirca il 65% die nodi sono rimossi, il 17% è rimasto suscettibile e il 18% è rimasto infetto.
+Come si vede anche dall'immagine, ora i rimossi sono nettamente inferiori, così come gli infetti ed i suscettibili sono di gran lunga superiori a prima (come ci si aspettava abbassando drasticamente la probabilità di guarigione e di contagio).
+
+<p align="center">
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/sirmodel1.png"/>
 </p>
 
 ## AUTORE
