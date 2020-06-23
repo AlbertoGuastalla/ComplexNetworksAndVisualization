@@ -420,6 +420,9 @@ Una cascata di informazioni è un fenomeno descritto nell'economia comportamenta
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior.png"/>
 </p>
 
+Arancio: segnale concorde allo stato del mondo<br>
+Blu: segnale disoncorde allo stato del mondo<br>
+
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo a partire da uno dei nodi maggiormente "influenti" della rete, ovvero il vertice 1773.
 Una volta generato il segnale (vero o falso) del nodo sorgente (1773), si è calcolato il segnale per tutti gli altri nodi della rete;
 il segnale del nodo i-esimo è stato calcolato tenendo conto esclusivamente dei segnali provenienti dai nodi adiacenti utilizzando la regola di Bayes per segnali multipli come discriminante proprio come nell'esperimento di Herding.
@@ -438,12 +441,18 @@ All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, p
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/cascading_behavior1.png"/>
 </p>
 
+Rosa: segnale concorde allo stato del mondo<br>
+Blu: segnale disoncorde allo stato del mondo<br>
+
 <h2>Diffusion of Innovation</h2>
 La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
 </p>
+
+Blu: adopters<br>
+Verdi: non adopters<br>
 
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
 Sono stati scelti 1000 nodi random come "initial adopters" di un determinato prodotto da diffondere nella rete.
@@ -456,6 +465,9 @@ Nella seconda simulazione invece, sono stati scelti i primi 1000 nodi "più infl
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
 </p>
 
+Blu: adopters<br>
+Verdi: non adopters<br>
+
 All'interno dell'algoritmo non è stato insierito un limite massimo di iterazioni, poichè un nodo non può essere più volte aggiornato (l'evoluzione del sistema è monotona).
 
 <h2>Epidemics</h2>
@@ -464,6 +476,10 @@ Un'epidemia è la rapida diffusione di una malattia in un gran numero di persone
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/sirmodel.png"/>
 </p>
+
+Rossi: infetti<br>
+Blu: suscettibili<br>
+Verdi: rimossi<br>
 
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
 Sono stati scelti 100 nodi random come "initial infected" di una determinata malattia.
@@ -479,6 +495,10 @@ Come si vede anche dall'immagine, ora i rimossi sono nettamente inferiori, così
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/sirmodel1.png"/>
 </p>
+
+Rossi: sucettibili<br>
+Blu: infetti<br>
+Verdi: rimossi<br>
 
 Anche in questo caso, all'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, poichè un nodo può essere più volte aggiornato (l'evoluzione del sistema non è monotona).
 
