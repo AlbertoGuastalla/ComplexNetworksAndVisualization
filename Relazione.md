@@ -426,7 +426,7 @@ Blu: segnale disoncorde allo stato del mondo<br>
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo a partire da uno dei nodi maggiormente "influenti" della rete, ovvero il vertice 1773.
 Una volta generato il segnale (vero o falso) del nodo sorgente (1773), si è calcolato il segnale per tutti gli altri nodi della rete;
 il segnale del nodo i-esimo è stato calcolato tenendo conto esclusivamente dei segnali provenienti dai nodi adiacenti utilizzando la regola di Bayes per segnali multipli come discriminante proprio come nell'esperimento di Herding.
-Come si nota facilmente anche dall'immagine, la quasi totalità dei nodi (quasi il 96%) ha seguito il primo segnale del nodo sorgente e solamente una piccola porzione della rete (all'incirca il 4%), ha generato il segnale opposto.
+Come si nota facilmente anche dall'immagine, la quasi totalità dei nodi (quasi il 96%) ha generato un segnale concorde allo stato del mondo e solamente una piccola porzione della rete (all'incirca il 4%), ha generato il segnale opposto.
 
 <h4>Parametri</h4>
 ● Stato del mondo: 0 (con probabilità 0.5), 1 (con probabilità 0.5)<br>
@@ -448,7 +448,7 @@ Blu: segnale disoncorde allo stato del mondo<br>
 La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
 </p>
 
 Blu: adopters<br>
@@ -462,7 +462,7 @@ Questo può essere dovuto anche al valore di soglia individuale per ciascun nodo
 Nella seconda simulazione invece, sono stati scelti i primi 1000 nodi "più influenti" della rete; ora la cascata è un pò più marcata, infatti il 35% dei nodi dela rete ha adottato il nuovo prodotto.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
 </p>
 
 Blu: adopters<br>
