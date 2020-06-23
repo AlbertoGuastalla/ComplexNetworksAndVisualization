@@ -442,7 +442,7 @@ All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, p
 La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
 </p>
 
 Nella simulazione effettuata, viene utilizzata la ricerca in ampiezza (BFS) per visitare l'intero grafo.
@@ -453,7 +453,7 @@ Questo può essere dovuto anche al valore di soglia individuale per ciascun nodo
 Nella seconda simulazione invece, sono stati scelti i primi 1000 nodi "più influenti" della rete; ora la cascata è un pò più marcata, infatti il 35% dei nodi dela rete ha adottato il nuovo prodotto.
 
 <p align="center">
-  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation.png"/>
+  <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/diffusionOfInnovation1.png"/>
 </p>
 
 All'interno dell'algoritmo non è stato insierito un limite massimo di iterazioni, poichè un nodo non può essere più volte aggiornato (l'evoluzione del sistema è monotona).
@@ -473,12 +473,15 @@ Ad ogni iterazione, un nodo sucettibile può passare ad infetto con una certa pr
 Nella prima simulazione si sono utilizzati come parametri: μi = 0.5 e β = 0.5 e all'incirca il 92.37% die nodi sono rimossi, il 7.62% è rimasto suscettibile e solamente lo 0.1% è rimasto infetto.
 Possiamo quindi affermare che la quasi totalità della rete ha contratto il virus ma l'epidemia non è diventata pandemica producendo la cosidetta immunità di gregge.
 
-Nella seconda simulazione, si sono utilizzati come parametri: μi = 0.02 e β = 0.02 e all'incirca il 65% die nodi sono rimossi, il 17% è rimasto suscettibile e il 18% è rimasto infetto.
+Nella seconda simulazione, si sono utilizzati come parametri: μi = 0.02 e β = 0.02 e all'incirca il 65% dei nodi sono rimossi, il 17% è rimasto suscettibile e il 18% è rimasto infetto.
 Come si vede anche dall'immagine, ora i rimossi sono nettamente inferiori, così come gli infetti ed i suscettibili sono di gran lunga superiori a prima (come ci si aspettava abbassando drasticamente la probabilità di guarigione e di contagio).
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/sirmodel1.png"/>
 </p>
+
+Anche in questo caso, all'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, poichè un nodo può essere più volte aggiornato (l'evoluzione del sistema non è monotona).
+
 
 ## AUTORE
 
