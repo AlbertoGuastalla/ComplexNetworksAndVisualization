@@ -35,7 +35,7 @@ La rete così visualizzata sembra avere gruppo compatto di streamers al centro c
 <h4>Considerazioni</h4>
 La densità è bassissima.
 Da una prima e rapida analisi infatti, si nota la presenza di molti nodi con un grado basso e pochi nodi con un grado alto (hubs).
-Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione esponenziale negativa del grado dei nodi (es. preferential attachment model).
+Questa caratteristica è molto ricorrente nelle free-scale network in cui vi è una distribuzione Power Law del grado dei nodi (es. preferential attachment model).
 
 <h3><li>Distanza</li></h3>
 Distanza minima fra ogni coppia di vertici del grafo.
@@ -233,7 +233,7 @@ Con una più bassa risuluzione l'algoritmo trova meno communities ma più coese 
 
 <h3>Barabasi-Albert model</h3>
 
-Il modello Barabási–Albert (BA) è un algoritmo per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale con una distribuzione esponenziale negativa del grado fra i vertici del grafo.
+Il modello Barabási–Albert (BA) è un algoritmo per la generazione di reti casuali ad invarianza di scala utilizzando un meccanismo di attacco preferenziale con una distribuzione Power Law del grado fra i vertici del grafo.
 
 <p align="center">
   <img src="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/barabasi_model.png"/>
