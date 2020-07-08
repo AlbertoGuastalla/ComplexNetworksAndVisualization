@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #a46b14; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+output {
+  position: absolute;
+  background-image: linear-gradient(#964b00, #964b00);
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  font: bold 15px/30px Georgia;
+  bottom: 175%;
+  left: 0;
+}
+output:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #964b00;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+form { position: relative; margin: 10px; }
+</style>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+<!-- Create an element where the map will take place -->
+<div align="center"><h1>Malaria's Confirmed Cases</h1></div>
+<div id="svgcontainer1" align="center"></div>
+<!-- Add a slider -->
+<div class="slidecontainer">
+  <form>
+    <input name="myRange1" id="myRange1" type="range" min="0" max="12" value="0" step="1" class="slider">
+    <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
+  </form>
+</div>
+
+<!-- Create an element where the map will take place -->
+<div align="center"><h1>Malaria's Deaths</h1></div>
+<div id="svgcontainer" align="center"></div>
+<!-- Add a slider -->
+<div class="slidecontainer">
+  <form>
+    <input name="myRange" id="myRange" type="range" min="0" max="12" value="0" step="1" class="slider">
+    <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
+  </form>
+</div>
+
+<script>
+
+// The svg
+var svg, svg1;
+var allData, allData1;
+var width = 1200;
+var height = 500;
+var year = 2000, year1 = 2000;
+
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoMercator()
+  .scale(200)
+  .center([0,0])
+  .translate([width / 2, height / 2]);
+
+// Data and color scale
+var data = d3.map();
+var data1 = d3.map();
+var pop = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([0.0005, 0.0015, 0.0025, 0.005, 0.015, 0.025, 0.05, 0.15, 0.25, 0.5, 1.5, 2.5, 5])
+  .range(d3.schemeOranges[7]);
+
+d3.csv('data.csv', function(d) {
+  allData = d;
+});
+
+d3.csv('data1.csv', function(d) {
+  allData1 = d;
+});
+
+// Load external data and boot
+function loadContent(Year) {
+  year = Year;
+  d3.queue()
+    .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+    .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",
+     function(d) { pop.set(d.name, +d.pop); })
+    .await(ready);
+}
+
+// Load external data and boot
+function loadContent1(Year) {
+  year1 = Year;
+  d3.queue()
+    .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+    .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",
+     function(d) { pop.set(d.name, +d.pop); })
+    .await(ready1);
+}
+
+// Listen to the slider?
+d3.select("#myRange").on("change", function(d){
+  loadContent(2000 + +this.value);
+  pop.clear();
+});
+
+// Listen to the slider?
+d3.select("#myRange1").on("change", function(d){
+  loadContent1(2000 + +this.value);
+  pop.clear();
+});
+
+loadContent(2000);
+loadContent1(2000);
+
+function ready(error, topo) {
+  data.clear();
+  for (i = 0; i < allData.length; i++) {
+    if (allData[i].Year == year) {
+      data.set(allData[i].Area, allData[i].Value);
+    }
+  }
+
+  d3.select("#my_dataviz").remove();
+  d3.select("#svgcontainer").append("svg")
+                            .attr("width", 1200)
+                            .attr("height", 500)
+                            .attr("id", "my_dataviz");
+
+  svg = d3.select("#my_dataviz");
+
+  // Draw the map
+  svg.append("g")
+    .selectAll("path")
+    .data(topo.features)
+    .enter()
+    .append("path")
+      // draw each country
+      .attr("d", d3.geoPath()
+        .projection(projection)
+      )
+      // set the color of each country
+      .attr("fill", function (d) {
+        d.total = (data.get(d.properties.name) / pop.get(d.properties.name) * 100) || 0;
+        return colorScale(d.total);
+      });
+    }
+
+  function ready1(error, topo) {
+    data1.clear();
+    for (i = 0; i < allData1.length; i++) {
+      if (allData1[i].Year == year1) {
+        data1.set(allData1[i].Area, allData1[i].Value);
+      }
+    }
+
+    d3.select("#my_dataviz1").remove();
+    d3.select("#svgcontainer1").append("svg")
+                              .attr("width", 1200)
+                              .attr("height", 500)
+                              .attr("id", "my_dataviz1");
+
+    svg1 = d3.select("#my_dataviz1");
+
+    // Draw the map
+    svg1.append("g")
+      .selectAll("path")
+      .data(topo.features)
+      .enter()
+      .append("path")
+        // draw each country
+        .attr("d", d3.geoPath()
+          .projection(projection)
+        )
+        // set the color of each country
+        .attr("fill", function (d) {
+          d.total = (data1.get(d.properties.name) / pop.get(d.properties.name) * 100) || 0;
+          return colorScale(d.total);
+        });
+      }
+
+    function modifyOffset() {
+      var el, newPoint, newPlace, offset, siblings, k;
+      width    = this.offsetWidth;
+      newPoint = (this.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
+      offset   = -1;
+      if (newPoint < 0) { newPlace = 0;  }
+      else if (newPoint > 1) { newPlace = width; }
+      else { newPlace = width * newPoint + offset; offset -= newPoint;}
+      siblings = this.parentNode.childNodes;
+      for (var i = 0; i < siblings.length; i++) {
+          sibling = siblings[i];
+          if (sibling.id == this.id) { k = true; }
+          if ((k == true) && (sibling.nodeName == "OUTPUT")) {
+              outputTag = sibling;
+          }
+      }
+      outputTag.style.left       = newPlace + "px";
+      outputTag.style.marginLeft = offset + "%";
+      outputTag.innerHTML        = 2000 + +this.value;
+  }
+
+  function modifyInputs() {
+
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].getAttribute("type") == "range") {
+              inputs[i].onchange = modifyOffset;
+
+              if ("fireEvent" in inputs[i]) {
+                  inputs[i].fireEvent("onchange");
+              } else {
+                  var evt = document.createEvent("HTMLEvents");
+                  evt.initEvent("change", false, true);
+                  inputs[i].dispatchEvent(evt);
+              }
+          }
+      }
+  }
+
+  modifyInputs();
+
+</script>
