@@ -472,6 +472,8 @@ Verdi: non adopters<br>
 
 All'interno dell'algoritmo non è stato insierito un limite massimo di iterazioni, poichè un nodo non può essere più volte aggiornato (l'evoluzione del sistema è monotona).
 
+<a href="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/DiffusionInnovationsModel.java" target="_blank" >Implementazione Java</a>
+
 <h2>Epidemics</h2>
 Un'epidemia è la rapida diffusione di una malattia in un gran numero di persone in un breve periodo di tempo.
 
@@ -504,6 +506,7 @@ Verdi: rimossi<br>
 
 Anche in questo caso, all'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, poichè un nodo può essere più volte aggiornato (l'evoluzione del sistema non è monotona).
 
+<a href="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/SIRModel.java" target="_blank" >Implementazione Java</a>
 
 ## AUTORE
 
