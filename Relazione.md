@@ -444,6 +444,8 @@ All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, p
 Rosa: segnale concorde allo stato del mondo<br>
 Blu: segnale disoncorde allo stato del mondo<br>
 
+<a href="https://github.com/AlbertoGuastalla/ComplexNetworksAndVisualization/blob/master/CascadingBehaviorModel.java" target="_blank" >Implementazione Java</a>
+
 <h2>Diffusion of Innovation</h2>
 La diffusione dell'innovazione è una teoria che cerca di spiegare come, perché e con quale frequenza si diffondono nuove idee e tecnologie all'intenro di una rete.
 
