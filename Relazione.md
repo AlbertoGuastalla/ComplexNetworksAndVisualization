@@ -433,7 +433,7 @@ Come si nota facilmente anche dall'immagine, la quasi totalità dei nodi (quasi 
 ● Segnale:<br> High | Status = 0 (con probabilità 2/3), Low | Status = 0 (con probabilità 1/3)<br>
 High | Status = 1 (con probabilità 1/3), Low | Status = 1 (con probabilità 2/3)<br><br>
 
-Effettuando invece un'altra simulazione, però partendo da un nodo meno influente come ad esempio il nodo 0, si nota anche dall'immagine, che la cascata ha coinvolto meno nodi di quella di prima. Infatti all'incirca il 93% ha generato un segnale "High", al contrario della simulazione di prima che aveva coinvolto all'incirca il 96% dei vertici della rete.
+Effettuando invece un'altra simulazione, però partendo da un nodo meno influente come ad esempio il nodo 0, si nota anche dall'immagine, che la cascata ha coinvolto meno nodi di quella di prima. Infatti all'incirca il 93% ha generato un segnale "High", al contrario della simulazione di prima che aveva coinvolto all'incirca il 96% dei vertici della rete. Questo è dovuto al fatto che, la cascata partendo da due punti differenti della rete (il primo maggiormente più centrale dell'altro), si diffonde, nella prima simulazione, anche a molti nodi di periferia, mentre nella seconda, fa fatica a raggiungere alcuni di questi nodi. Possiamo quindi far riferimento all'analogia del fluido che si diffonde all'interno della rete che, partendo da un punto "più centrale" dell'ultima, riesce a raggiungere, con maggiore facilità anche i nodi più esterni.
 
 All'interno dell'algoritmo è stato insierito un limite massimo di iterazioni, poichè un nodo può essere più volte aggiornato (l'evoluzione del sistema non è monotona).
 
