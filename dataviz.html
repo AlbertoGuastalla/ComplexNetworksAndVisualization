@@ -73,7 +73,6 @@ form { position: relative; margin: 10px; }
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
 <!-- Create an element where the map will take place -->
@@ -98,6 +97,8 @@ form { position: relative; margin: 10px; }
   </form>
 </div>
 
+<div align="center" id = "chart"></div>
+
 <script>
 
 // The svg
@@ -106,6 +107,16 @@ var allData, allData1;
 var width = 1200;
 var height = 500;
 var year = 2000, year1 = 2000;
+
+d3.select("#svgcontainer").append("svg")
+                          .attr("width", 1200)
+                          .attr("height", 500)
+                          .attr("id", "my_dataviz");
+
+d3.select("#svgcontainer1").append("svg")
+                          .attr("width", 1200)
+                          .attr("height", 500)
+                          .attr("id", "my_dataviz1");
 
 // Map and projection
 var path = d3.geoPath();
@@ -121,6 +132,53 @@ var pop = d3.map();
 var colorScale = d3.scaleThreshold()
   .domain([0.0005, 0.0015, 0.0025, 0.005, 0.015, 0.025, 0.05, 0.15, 0.25, 0.5, 1.5, 2.5, 5])
   .range(d3.schemeOranges[7]);
+
+console.log(colorScale(0.0));
+
+// initialize variables
+var
+  dataset = [ 0.0, 0.0005, 0.0015, 0.0025, 0.005, 0.015, 0.025 ],
+  names   = [ '0.0%', '0.0005%', '0.0015%', '0.0025%', '0.005%', '0.015%', '0.025%' ],
+  h_line  = 190, // the height of the line in pixels
+  h       = h_line*dataset.length,
+  width   = 1000,
+  max_x   = 25,
+  offset  = 14, // vertical offset for the bar text
+  barPadding = 1,
+  // define the linear scaling function
+  scale_x = d3.scaleLinear()
+              .domain([0, max_x ])
+              .range([0, width]);
+  // make the svg elements and define the variable svg_fun
+  svg_fun = d3.select('#chart')
+              .append('svg')
+              .attr('height', 20)
+              .attr('width', '100%');
+
+// Bars
+svg_fun.selectAll('rect .background')
+       .data(dataset)
+       .enter()
+       .append('rect')
+       .classed('background', true)
+       .attr('y', 0)
+       .attr('x', function(d, i) {return i * h_line; })
+       .attr('height', 20)
+       .attr('width', function(d) {return scale_x(max_x);} )
+       .attr('fill', function(d) {return colorScale(d);})
+
+// Text
+svg_fun.selectAll('text')
+       .data(names)
+       .enter()
+       .append('text')
+       .text(function(d) { return d;})
+       .attr('y', 15)
+       .attr('x', function(d, i) {return i * h_line + offset ; })
+       .attr('font-family', 'sans-serif')
+       .attr('font-size', '13px')
+       .attr('font-weight', 900)
+       .attr('fill', 'black');
 
 d3.csv('data.csv', function(d) {
   allData = d;
@@ -173,12 +231,6 @@ function ready(error, topo) {
     }
   }
 
-  d3.select("#my_dataviz").remove();
-  d3.select("#svgcontainer").append("svg")
-                            .attr("width", 1200)
-                            .attr("height", 500)
-                            .attr("id", "my_dataviz");
-
   svg = d3.select("#my_dataviz");
 
   // Draw the map
@@ -205,12 +257,6 @@ function ready(error, topo) {
         data1.set(allData1[i].Area, allData1[i].Value);
       }
     }
-
-    d3.select("#my_dataviz1").remove();
-    d3.select("#svgcontainer1").append("svg")
-                              .attr("width", 1200)
-                              .attr("height", 500)
-                              .attr("id", "my_dataviz1");
 
     svg1 = d3.select("#my_dataviz1");
 
