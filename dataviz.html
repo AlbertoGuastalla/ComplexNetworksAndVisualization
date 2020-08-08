@@ -66,57 +66,111 @@ output:after {
   margin-left: -5px;
   margin-top: -1px;
 }
-form { position: relative; margin: 10px; }
+form {
+  position: relative; margin: 10px;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
 </style>
 
 <!-- Load d3.js -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
 <!-- Create an element where the map will take place -->
-<div align="center"><h1>Malaria's Confirmed Cases</h1></div>
-<div id="svgcontainer1" align="center"></div>
-<!-- Add a slider -->
-<div class="slidecontainer">
-  <form>
-    <input name="myRange1" id="myRange1" type="range" min="0" max="12" value="0" step="1" class="slider">
-    <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
-  </form>
+<div class="d-flex justify-content-around">
+  <div class="d-flex flex-row">
+    <div class="p-2"><b><font face="WildWest" size="6">Malaria's Confirmed Cases</font></b></div>
+  </div>
+  <div class="d-flex flex-row-reverse">
+    <div class="p-2"><b><font face="WildWest" size="6">Malaria's Deaths</font></b></div>
+  </div>
 </div>
-
-<!-- Create an element where the map will take place -->
-<div align="center"><h1>Malaria's Deaths</h1></div>
-<div id="svgcontainer" align="center"></div>
-<!-- Add a slider -->
+<div align="center" id="svgcontainer"></div>
 <div class="slidecontainer">
   <form>
     <input name="myRange" id="myRange" type="range" min="0" max="12" value="0" step="1" class="slider">
     <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
   </form>
 </div>
-
-<div align="center" id = "chart"></div>
-
 <script>
 
-// The svg
-var svg, svg1;
-var allData, allData1;
-var width = 1200;
-var height = 500;
-var year = 2000, year1 = 2000;
+function inOrder(arr, item) {
+    /* Insert item into arr keeping low to high order */
 
-d3.select("#svgcontainer").append("svg")
-                          .attr("width", 1200)
-                          .attr("height", 500)
+    let ix = 0;
+    while (ix < arr.length) {
+        if (item < arr[ix]) { break; }
+        ix++;
+    }
+
+    arr.splice(ix,0,item);
+    return arr
+}
+
+// The svg
+var svg, svg1, g, g1;
+var allData, allData1;
+var topo;
+var width = 1100;
+var height = 850;
+var year = 2000;
+var list = [];
+var list1 = [];
+var wnd;
+
+svg = d3.select("#svgcontainer").append("svg")
+                          .attr("width", '49%')
+                          .attr("height", '100%')
                           .attr("id", "my_dataviz");
 
-d3.select("#svgcontainer1").append("svg")
-                          .attr("width", 1200)
-                          .attr("height", 500)
+svg1 = d3.select("#svgcontainer").append("svg")
+                          .attr("width", '49%')
+                          .attr("height", '100%')
                           .attr("id", "my_dataviz1");
+
+const zoom = d3.zoom()
+      .scaleExtent([1, 8])
+      .extent([[0, 0], [width, height]])
+      .on("zoom", function() { g.attr("transform", d3.event.transform); g1.attr("transform", d3.event.transform);});
+
+svg.attr("viewBox", [100, 50, width, height]);
+svg.call(zoom);
+svg1.attr("viewBox", [100, 50, width, height]);
+svg1.call(zoom);
+
+g = d3.select("#my_dataviz").append("g");
+g1 = d3.select("#my_dataviz1").append("g");
+
+let mouseOver = function() {
+  d3.selectAll(".Country")
+    .style("opacity", .4)
+
+  var lines = d3.select(this).select("title")._groups[0][0].innerHTML;
+  var state = lines.split('\n')[0];
+  state = state.replace(/\s/g, '');
+  svg.select("#" + state).style("opacity", 0.9)
+      .style("stroke", "orange")
+      .attr("stroke-width", 0.5)
+
+  svg1.select("#" + state).style("opacity", 0.9)
+      .style("stroke", "orange")
+      .attr("stroke-width", 0.5)
+}
+
+let mouseLeave = function() {
+  d3.selectAll(".Country")
+    .style("opacity", 1)
+    .style("stroke", "orange")
+    .attr("stroke-width", 0.5)
+}
 
 // Map and projection
 var path = d3.geoPath();
@@ -125,121 +179,117 @@ var projection = d3.geoMercator()
   .center([0,0])
   .translate([width / 2, height / 2]);
 
+var scale = d3.schemeOranges[4];
+scale[0] = "#FFEBD2";
+
 // Data and color scale
 var data = d3.map();
 var data1 = d3.map();
+var totalCases = d3.map();
+var totalDeaths = d3.map();
 var pop = d3.map();
-var colorScale = d3.scaleThreshold()
-  .domain([0.0005, 0.0015, 0.0025, 0.005, 0.015, 0.025, 0.05, 0.15, 0.25, 0.5, 1.5, 2.5, 5])
-  .range(d3.schemeOranges[7]);
+var colorScale;
 
-console.log(colorScale(0.0));
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",
+   function(d) { pop.set(d.name, +d.pop); })
+  .await(function(error, data) { topo = data; setSlider(); });
 
-// initialize variables
-var
-  dataset = [ 0.0, 0.0005, 0.0015, 0.0025, 0.005, 0.015, 0.025 ],
-  names   = [ '0.0000% - 0.0004%​', '0.0005% - 0.0014%​', '0.0015% - 0.0024%',
-              '0.0025% - 0.0049%', '0.0050% - 0.0149%', '0.0150% - 0.0249%', '0.0250% - 100.00%' ],
-  h_line  = 190, // the height of the line in pixels
-  h       = h_line*dataset.length,
-  width   = 1000,
-  max_x   = 25,
-  offset  = 14, // vertical offset for the bar text
-  barPadding = 1,
-  // define the linear scaling function
-  scale_x = d3.scaleLinear()
-              .domain([0, max_x ])
-              .range([0, width]);
-  // make the svg elements and define the variable svg_fun
-  svg_fun = d3.select('#chart')
-              .append('svg')
-              .attr('height', 20)
-              .attr('width', '100%');
+function setSlider() {
+  // Listen to the slider?
+  d3.select("#myRange").on("change", function(d){
+    year = 2000 + +this.value;
 
-// Bars
-svg_fun.selectAll('rect .background')
-       .data(dataset)
-       .enter()
-       .append('rect')
-       .classed('background', true)
-       .attr('y', 0)
-       .attr('x', function(d, i) {return i * h_line; })
-       .attr('height', 20)
-       .attr('width', function(d) {return scale_x(max_x);} )
-       .attr('fill', function(d) {return colorScale(d);})
+    d3.csv('confirmed_cases.csv', function(d) {
+      allData = d;
 
-// Text
-svg_fun.selectAll('text')
-       .data(names)
-       .enter()
-       .append('text')
-       .text(function(d) { return d;})
-       .attr('y', 15)
-       .attr('x', function(d, i) {return i * h_line + offset ; })
-       .attr('font-family', 'sans-serif')
-       .attr('font-size', '13px')
-       .attr('font-weight', 900)
-       .attr('fill', 'black');
+      data.clear();
+      for (i = 0; i < allData.length; i++) {
+        if (!totalCases.has(allData[i].Area)) {
+          var l = [allData[i].Value];
+          totalCases.set(allData[i].Area, l);
+        } else {
+          var l = totalCases.get(allData[i].Area);
+          l.push(allData[i].Value);
+          totalCases.set(allData[i].Area, l);
+        }
 
-d3.csv('data.csv', function(d) {
-  allData = d;
-});
+        if (allData[i].Year == year) {
+          data.set(allData[i].Area, allData[i].Value);
+        }
+      }
 
-d3.csv('data1.csv', function(d) {
-  allData1 = d;
-});
+      d3.csv('deaths.csv', function(d) {
+        allData1 = d;
 
-// Load external data and boot
-function loadContent(Year) {
-  year = Year;
-  d3.queue()
-    .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-    .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",
-     function(d) { pop.set(d.name, +d.pop); })
-    .await(ready);
+        data1.clear();
+        for (i = 0; i < allData1.length; i++) {
+          if (!totalDeaths.has(allData1[i].Area)) {
+            var l = [allData1[i].Value];
+            totalDeaths.set(allData1[i].Area, l);
+          } else {
+            var l = totalDeaths.get(allData1[i].Area);
+            l.push(allData1[i].Value);
+            totalDeaths.set(allData1[i].Area, l);
+          }
+
+          if (allData1[i].Year == year) {
+            data1.set(allData1[i].Area, allData1[i].Value);
+          }
+        }
+
+        list = [];
+
+        topo.features.forEach(function(d) {
+          if (totalCases.get(d.properties.name) != null) {
+            totalCases.get(d.properties.name).forEach(function(n) {
+              var cases = (n / pop.get(d.properties.name) * 100) || 0;
+
+              if (!list.includes(cases))
+                list = inOrder(list, cases);
+            });
+          }
+        });
+
+        topo.features.forEach(function(d) {
+          if (totalDeaths.get(d.properties.name) != null) {
+            totalDeaths.get(d.properties.name).forEach(function(n) {
+              var deaths = (n / pop.get(d.properties.name) * 100) || 0;
+
+              if (!list.includes(deaths))
+                list = inOrder(list, deaths);
+            });
+          }
+        });
+
+        list = list.slice(0, list.length - 1);
+
+        colorScale = d3.scaleQuantile()
+          .domain(list)
+          .range(scale);
+
+        displayConfirmedCases();
+        displayDeaths();
+        mouseLeave();
+      });
+    });
+  });
+
+  var event = new Event('change');
+  document.getElementById('myRange').dispatchEvent(event);
 }
 
-// Load external data and boot
-function loadContent1(Year) {
-  year1 = Year;
-  d3.queue()
-    .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-    .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",
-     function(d) { pop.set(d.name, +d.pop); })
-    .await(ready1);
-}
-
-// Listen to the slider?
-d3.select("#myRange").on("change", function(d){
-  loadContent(2000 + +this.value);
-  pop.clear();
-});
-
-// Listen to the slider?
-d3.select("#myRange1").on("change", function(d){
-  loadContent1(2000 + +this.value);
-  pop.clear();
-});
-
-loadContent(2000);
-loadContent1(2000);
-
-function ready(error, topo) {
-  data.clear();
-  for (i = 0; i < allData.length; i++) {
-    if (allData[i].Year == year) {
-      data.set(allData[i].Area, allData[i].Value);
-    }
-  }
-
-  svg = d3.select("#my_dataviz");
-
+function displayConfirmedCases() {
+  g.selectAll("path").remove();
   // Draw the map
-  svg.append("g")
-    .selectAll("path")
+  g.selectAll("path")
     .data(topo.features)
     .enter()
     .append("path")
+      .attr("id", function (d) {
+        return d.properties.name.replace(/\s/g, '');
+      })
       // draw each country
       .attr("d", d3.geoPath()
         .projection(projection)
@@ -247,38 +297,103 @@ function ready(error, topo) {
       // set the color of each country
       .attr("fill", function (d) {
         d.total = (data.get(d.properties.name) / pop.get(d.properties.name) * 100) || 0;
+
         return colorScale(d.total);
-      });
+      }).style("stroke", "transparent")
+      .attr("class", function(d){ return "Country" })
+      .on("click", function(d) {
+
+        var filterData = {state: d.properties.name,
+                          cases: [],
+                          deaths: []};
+
+        var i;
+        for (i = 0; i < allData.length; i++) {
+          if (allData[i].Area == d.properties.name) {
+             filterData.cases.push(allData[i]);
+          }
+        }
+
+        for (i = 0; i < allData1.length; i++) {
+          if (allData1[i].Area == d.properties.name) {
+             filterData.deaths.push(allData1[i]);
+          }
+        }
+
+        localStorage.setItem('data', JSON.stringify(filterData));
+
+        if (wnd == null || wnd.closed == true) {
+          if (filterData.cases.length > 0)
+          wnd = window.open("http://localhost:8080/multiline.html", "", "width=800,height=550");
+        } else {
+          wnd.location.reload();
+        }
+      })
+      .on("mouseover", mouseOver)
+      .on("mouseleave", mouseLeave).append("title")
+      .text(d => `${d.properties.name}\nCases: ${Number(data.get(d.properties.name) || 0)}\nDeaths: ${Number(data1.get(d.properties.name) || 0)}`);
     }
 
-  function ready1(error, topo) {
-    data1.clear();
-    for (i = 0; i < allData1.length; i++) {
-      if (allData1[i].Year == year1) {
-        data1.set(allData1[i].Area, allData1[i].Value);
-      }
-    }
-
-    svg1 = d3.select("#my_dataviz1");
-
+  function displayDeaths() {
+    g1.selectAll("path").remove();
     // Draw the map
-    svg1.append("g")
-      .selectAll("path")
+    g1.selectAll("path")
       .data(topo.features)
       .enter()
       .append("path")
+        .attr("id", function (d) {
+          return d.properties.name.replace(/\s/g, '');
+        })
         // draw each country
         .attr("d", d3.geoPath()
           .projection(projection)
         )
         // set the color of each country
         .attr("fill", function (d) {
-          d.total = (data1.get(d.properties.name) / pop.get(d.properties.name) * 100) || 0;
-          return colorScale(d.total);
-        });
-      }
 
-    function modifyOffset() {
+          if (data.get(d.properties.name) > 0.0) {
+            d.total = (data1.get(d.properties.name) / pop.get(d.properties.name) * 100) || 0;
+          } else {
+            d.total = 0;
+          }
+
+          return colorScale(d.total);
+        }).style("stroke", "transparent")
+      .attr("class", function(d){ return "Country" } )
+      .on("click", function(d) {
+
+        var filterData = {state: d.properties.name,
+                          cases: [],
+                          deaths: []};
+
+        var i;
+        for (i = 0; i < allData.length; i++) {
+          if (allData[i].Area == d.properties.name) {
+             filterData.cases.push(allData[i]);
+          }
+        }
+
+        for (i = 0; i < allData1.length; i++) {
+          if (allData1[i].Area == d.properties.name) {
+             filterData.deaths.push(allData1[i]);
+          }
+        }
+
+        localStorage.setItem('data', JSON.stringify(filterData));
+
+        if (wnd == null || wnd.closed == true) {
+          if (filterData.deaths.length > 0)
+            wnd = window.open("http://localhost:8080/multiline.html", "", "width=800,height=550");
+        } else {
+          wnd.location.reload();
+        }
+      })
+      .on("mouseover", mouseOver)
+      .on("mouseleave", mouseLeave).append("title")
+        .text(d => `${d.properties.name}\nCases: ${Number(data.get(d.properties.name) || 0)}\nDeaths: ${Number(data1.get(d.properties.name) || 0)}`);
+  }
+
+  function modifyOffset() {
       var el, newPoint, newPlace, offset, siblings, k;
       width    = this.offsetWidth;
       newPoint = (this.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
